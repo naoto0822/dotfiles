@@ -23,6 +23,7 @@ update:
 
 deploy:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+	cp -rf vendor/.oh-my-zsh $(HOME)/
 
 init:
 	@sh ./etc/init.sh
@@ -34,3 +35,4 @@ install: yeah update deploy init
 
 test:
 	## test
+	echo $(HOME)

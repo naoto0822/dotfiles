@@ -16,5 +16,5 @@ else
   echo "[INFO] already installed homebrew"
 fi
 
-# oh-my-ash!
-echo $HOME
+# oh-my-zsh!
+# do nothing...
