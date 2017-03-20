@@ -17,5 +17,4 @@ else
 fi
 
 # oh-my-ash!
-# do nothing...
-
+echo $HOME

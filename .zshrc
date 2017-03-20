@@ -50,9 +50,6 @@ plugins=(git)
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# homebrew
-export PATH=/usr/local/bin:$PATH
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -77,6 +74,9 @@ export PATH=/usr/local/bin:$PATH
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# homebrew
+export PATH=/usr/local/bin:$PATH
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
