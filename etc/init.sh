@@ -12,7 +12,10 @@ if [ ! `which brew` ]; then
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew doctor
   echo "[INFO] installed successfully homebrew !"
+else
+  echo "[INFO] already installed homebrew"
 fi
 
-
+# oh-my-ash!
+# do nothing...
 
