@@ -1,4 +1,6 @@
 # dotfiles
+[![GitHub issues](https://img.shields.io/github/issues/naoto0822/dotfiles.svg)](https://github.com/naoto0822/dotfiles/issues)
+[![license](https://img.shields.io/github/license/naoto0822/dotfiles.svg)](https://github.com/naoto0822/dotfiles/blob/master/LICENSE)
 
 ## Getting Started
 
