@@ -12,7 +12,9 @@ $ make install
 
 ## Requirements
 
+- zsh
 - macOS
+- iTerm2 (Solarized Dark)
 
 ## TODO
 
