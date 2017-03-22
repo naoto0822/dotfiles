@@ -18,10 +18,10 @@ $ make install
 
 ## TODO
 
-- [ ] using vim-plug
+- [☓] using vim-plug
 - [ ] for linux
 - [ ] build in CircleCI or TravisCI
-- [ ] control brew package
+- [ ] control brew package(http://qiita.com/ryurock/items/1432578d364985f6cb06)
 - [ ] change oh-my-zsh
 
 ## License
