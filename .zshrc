@@ -77,6 +77,7 @@ source $ZSH/oh-my-zsh.sh
 
 # homebrew
 export PATH=/usr/local/bin:$PATH
+export HOMEBREW_NO_ANALYTICS=1
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
