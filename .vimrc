@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'Shougo/neocomplete.vim'
+Plug 'tpope/vim-endwise'
 call plug#end()
 
 " neocomplete.vim
