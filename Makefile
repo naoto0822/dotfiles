@@ -4,6 +4,21 @@ CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
+all:
+	@make help
+
+help:
+	@echo "***************************************************"
+	@echo "HELP"
+	@echo "***************************************************"
+	@echo "make yeah    : echo yeah"
+	@echo "make update  : exec git pull and submodule update"
+	@echo "make deploy  : cp dotfiles to home directory"
+	@echo "make init    : exec init.sh"
+	@echo "make install : dep yeah, updatem deploy, init"
+	@echo "make test    : test command"
+	@echo "***************************************************"
+
 yeah:
 	@echo ""
 	@echo "-----------------------------------------"
