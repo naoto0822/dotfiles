@@ -43,14 +43,3 @@ is_cygwin() {
   fi
 }
 
-# for example
-if [ $(is_macos) == "true" ]; then
-  echo "os is macOS"
-else
-  echo "os is other"
-fi
-
-is_macos
-is_liux
-is_cygwin
-
