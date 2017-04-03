@@ -1,6 +1,8 @@
 #!/bin/sh
 
-. os.sh
+CURRENT_PATH=$(cd $(dirname $0) && pwd)
+
+. "$CURRENT_PATH"/os.sh
 
 echo "-----------------------------------------"
 echo "---> start install"
@@ -37,3 +39,7 @@ echo "[INFO] For common script"
 echo "[INFO] install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "******************************************"
+echo "Installed Successfully My Dotfiles :tada: "
+echo "******************************************"

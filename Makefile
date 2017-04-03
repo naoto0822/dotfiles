@@ -41,13 +41,13 @@ deploy:
 	cp -rf vendor/.oh-my-zsh $(HOME)/
 
 init:
-	@sh ./etc/init.sh
+	@sh $(DOTPATH)/etc/init.sh
 
 install: yeah update deploy init
 	@echo "*****************************************"
-	@echo "Installed Successfully My Dotfiles !!!"
+	@echo "Finished make install command."
 	@echo "*****************************************"
 
 test:
 	## test
-	echo $(HOME)
+	echo $(DOTPATH)
