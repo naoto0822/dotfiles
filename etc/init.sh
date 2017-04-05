@@ -3,43 +3,44 @@
 CURRENT_PATH=$(cd $(dirname $0) && pwd)
 
 . "$CURRENT_PATH"/os.sh
+. "$CURRENT_PATH"/logger.sh
 
-echo "-----------------------------------------"
-echo "---> start install"
-echo "-----------------------------------------"
+info_log "-----------------------------------------"
+info_log "---> start install"
+info_log "-----------------------------------------"
 
 if [ $(is_macos) == "true" ]; then
-  echo "[INFO] For macOS script"
+  info_log "[INFO] For macOS script"
 
   # Command Line Tools
   if [ ! `which xcode-select` ]; then
     xcode-select --install
-    echo "[INFO] installed successfully Command Line Tools !"
+    info_log "[INFO] installed successfully Command Line Tools !"
   else
-    echo "[INFO] already installed Command Line Tools"
+    info_log "[INFO] already installed Command Line Tools"
   fi
 
   # homebrew
   if [ ! `which brew` ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew doctor
-    echo "[INFO] installed successfully homebrew !"
+    info_log "[INFO] installed successfully homebrew !"
   else
-    echo "[INFO] already installed homebrew"
+    info_log "[INFO] already installed homebrew"
   fi
 
 fi
 
-echo "[INFO] For common script"
+info_log "[INFO] For common script"
 
 # oh-my-zsh!
 # do nothing...
 
 # vim-plug
-echo "[INFO] install vim-plug"
+info_log "[INFO] install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-echo "******************************************"
-echo "Installed Successfully My Dotfiles :tada: "
-echo "******************************************"
+info_log "******************************************"
+info_log "Installed Successfully My Dotfiles :tada: "
+info_log "******************************************"
