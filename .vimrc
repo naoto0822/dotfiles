@@ -46,6 +46,7 @@ set showcmd
 set backspace=2
 set wildmenu
 set ruler
+set clipboard=unnamed
 
 " ruby
 if expand("%:t") =~ ".*\.rb"
