@@ -10,25 +10,11 @@ info_log "---> start install"
 info_log "-----------------------------------------"
 
 if [ $(is_macos) == "true" ]; then
-  info_log "[INFO] For macOS script"
-
-  # Command Line Tools
-  if [ ! `which xcode-select` ]; then
-    xcode-select --install
-    info_log "[INFO] installed successfully Command Line Tools !"
-  else
-    info_log "[INFO] already installed Command Line Tools"
-  fi
-
-  # homebrew
-  if [ ! `which brew` ]; then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew doctor
-    info_log "[INFO] installed successfully homebrew !"
-  else
-    info_log "[INFO] already installed homebrew"
-  fi
-
+  sh "$CURRENT_PATH"/mac.sh
+elif [ $(is_linux) == "true" ]; then
+  sh "$CURRENT_PATH"/linux.sh
+else
+  error_log "[ERROR] unsupported env"
 fi
 
 info_log "[INFO] For common script"
