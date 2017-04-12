@@ -19,13 +19,7 @@ fi
 
 info_log "[INFO] For common script"
 
-# oh-my-zsh!
-# do nothing...
-
-# vim-plug
-info_log "[INFO] install vim-plug"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh "$CURRENT_PATH"/common.sh
 
 info_log "******************************************"
 info_log "Installed Successfully My Dotfiles :tada: "
