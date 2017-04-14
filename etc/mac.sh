@@ -22,3 +22,7 @@ if [ ! `which brew` ]; then
 else
   info_log "[INFO] already installed homebrew"
 fi
+
+# local Circle CI
+sh "$CURRENT_PATH"/local_ci.sh
+
