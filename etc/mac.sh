@@ -24,5 +24,5 @@ else
 fi
 
 # local Circle CI
-sh "$CURRENT_PATH"/local_ci.sh
+# sh "$CURRENT_PATH"/local_ci.sh
 
