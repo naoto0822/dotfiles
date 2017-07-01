@@ -26,6 +26,12 @@ inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap [ []<ESC>i
+inoremap [<Enter> []<Left><CR><ESC><S-o>
+inoremap ' ''<ESC>i
+inoremap '<Enter> ''<Left><CR><ESC><S-o>
+inoremap " ""<ESC>i
+inoremap "<Enter> ""<Left><CR><ESC><S-o>
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
