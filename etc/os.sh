@@ -25,7 +25,7 @@ is_macos() {
   fi
 }
 
-is_liux() {
+is_linux() {
   get_os
   if [ "$OS" == "linux" ]; then
     echo "true"
