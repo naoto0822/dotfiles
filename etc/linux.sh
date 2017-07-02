@@ -4,21 +4,26 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 
 . "$CURRENT_PATH"/logger.sh
 
+# for Linux
 info_log "[INFO] exec linux.sh"
 
-# for CentOS
+# install package
+sudo yum -y install wget
+sudo yum -y install make
+sudo yum -y install gcc
+sudo yum -y install mercurial
+sudo yum -y install ncurses-devel
+sudo yum -y install lua-devel
+sudo yum -y install ruby-devel
+sudo yum -y install perl-ExtUtils-Embed
+sudo yum -y install python-devel
+sudo yum -y install zsh
 
-# Vim
-yum -y install make
-yum -y install gcc
-yum -y install mercurial
-yum -y install ncurses-devel
-yum -y install lua-devel
-yum -y install ruby-devel
-yum -y install perl-ExtUtils-Embed
-
-wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2
-tar xvf vim-8.0.tar.bz2
+# vim with lua
+# build and make.
+cd /usr/local/src/
+sudo wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2
+sudo tar xvf vim-8.0.tar.bz2
 cd vim80
 
 ./configure \
@@ -31,10 +36,11 @@ cd vim80
   --enable-rubyinterp \
   --with-ruby-command=/usr/bin/ruby \
 
-make
-make install
+sudo make
+sudo make install
+
+cd $HOME/dotfiles
 
 # Zsh
-yum -y install zsh
 chsh -s /bin/zsh
 
