@@ -90,3 +90,10 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+# tig
+tig=$HOME/dotfiles/bin/tig
+if [ -d "$tig" ]; then
+  export MANPATH=$tig/share/man:$MANPATH
+  export PATH=$tig/bin:$PATH
+fi

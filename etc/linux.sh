@@ -47,3 +47,8 @@ chsh -s /bin/zsh
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+# tig
+git clone git@github.com:jonas/tig.git
+cd tig
+make install install-release-doc prefix=$HOME/dotfiles/bin/tig
