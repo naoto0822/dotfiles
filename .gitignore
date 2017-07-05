@@ -3,3 +3,5 @@
 .config/*
 !.config/fish
 .zsh/history/
+bin/tig/
+vendor/tig/
