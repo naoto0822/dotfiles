@@ -1,0 +1,9 @@
+machine:
+  ruby:
+    version: 2.4.0
+checkout:
+  post:
+    - git submodule update --init --recursive
+test:
+  override:
+    - make install
