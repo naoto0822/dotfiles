@@ -6,7 +6,7 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 . "$CURRENT_PATH"/logger.sh
 
 info_log "-----------------------------------------"
-info_log "---> start install"
+info_log "start install"
 info_log "-----------------------------------------"
 
 if is_macos; then
@@ -15,10 +15,10 @@ elif is_linux; then
   sh "$CURRENT_PATH"/linux.sh
 else
   error_log "[ERROR] unsupported env"
+  exit 1
 fi
 
-info_log "[INFO] For common script"
-
+info_log "[INFO] common script"
 sh "$CURRENT_PATH"/common.sh
 
 info_log "******************************************"

@@ -44,9 +44,6 @@ init:
 	@sh $(DOTPATH)/etc/init.sh
 
 install: yeah update deploy init
-	@echo "*****************************************"
-	@echo "Finished make install command."
-	@echo "*****************************************"
 
 test:
 	## test
