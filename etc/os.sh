@@ -4,11 +4,11 @@
 export OS
 
 get_os() {
-  if [ "$(uname)" == "Darwin" ]; then
+  if [ "$(uname)" = "Darwin" ]; then
     OS="mac"
-  elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
     OS="linux"
-  elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+  elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
     OS="cygwin"
   else
     echo "[WARN] unsupport os."
@@ -18,28 +18,28 @@ get_os() {
 
 is_macos() {
   get_os
-  if [ "$OS" == "mac" ]; then
-    echo "true"
+  if [ "$OS" = "mac" ]; then
+    return 0
   else
-    echo "false"
+    return 1
   fi
 }
 
 is_linux() {
   get_os
-  if [ "$OS" == "linux" ]; then
-    echo "true"
+  if [ "$OS" = "linux" ]; then
+    return 0
   else
-    echo "false"
+    return 1
   fi
 }
 
 is_cygwin() {
   get_os
-  if [ "$OS" == "cygwin" ]; then
-    echo "true"
+  if [ "$OS" = "cygwin" ]; then
+    return 0
   else
-    echo "false"
+    return 1
   fi
 }
 

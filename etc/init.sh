@@ -9,9 +9,9 @@ info_log "-----------------------------------------"
 info_log "---> start install"
 info_log "-----------------------------------------"
 
-if [ $(is_macos) == "true" ]; then
+if is_macos; then
   sh "$CURRENT_PATH"/mac.sh
-elif [ $(is_linux) == "true" ]; then
+elif is_linux; then
   sh "$CURRENT_PATH"/linux.sh
 else
   error_log "[ERROR] unsupported env"
