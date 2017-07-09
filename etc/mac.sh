@@ -4,23 +4,23 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 
 . "$CURRENT_PATH"/logger.sh
 
-info_log "[INFO] exec mac.sh"
+info_log "exec mac.sh"
 
 # Command Line Tools
 if [ ! `which xcode-select` ]; then
   xcode-select --install
-  info_log "[INFO] installed successfully Command Line Tools !"
+  info_log "installed successfully Command Line Tools !"
 else
-  info_log "[INFO] already installed Command Line Tools"
+  info_log "already installed Command Line Tools"
 fi
 
 # homebrew
 if [ ! `which brew` ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew doctor
-  info_log "[INFO] installed successfully homebrew !"
+  info_log "installed successfully homebrew !"
 else
-  info_log "[INFO] already installed homebrew"
+  info_log "already installed homebrew"
 fi
 
 # local Circle CI

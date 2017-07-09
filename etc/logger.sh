@@ -8,14 +8,14 @@ COLOR_END="\e[m"
 LINE="\n"
 
 info_log() {
-  printf "${COLOR_BLUE}$1${COLOR_END}${LINE}";
+  printf "${COLOR_BLUE} [INFO] %s${COLOR_END}${LINE}" $1;
 }
 
 warn_log() {
-  printf "${COLOR_YELLOW}$1${COLOR_END}${LINE}";
+  printf "${COLOR_YELLOW} [WARN] %s${COLOR_END}${LINE}" $1;
 }
 
 error_log() {
-  printf "${COLOR_RED}$1${COLOR_END}${LINE}";
+  printf "${COLOR_RED} [ERROR] %s${COLOR_END}${LINE}" $1;
 }
 

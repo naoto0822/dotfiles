@@ -14,11 +14,11 @@ if is_macos; then
 elif is_linux; then
   sh "$CURRENT_PATH"/linux.sh
 else
-  error_log "[ERROR] unsupported env"
+  error_log "unsupported env"
   exit 1
 fi
 
-info_log "[INFO] common script"
+info_log "common script"
 sh "$CURRENT_PATH"/common.sh
 
 info_log "******************************************"

@@ -5,7 +5,7 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 . "$CURRENT_PATH"/logger.sh
 
 # for Linux
-info_log "[INFO] exec linux.sh"
+info_log "exec linux.sh"
 
 # install package
 sudo yum -y install wget
