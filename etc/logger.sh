@@ -7,15 +7,19 @@ COLOR="\e[37m"
 COLOR_END="\e[m"
 LINE="\n"
 
+timestamp() {
+  printf "$(date +'%Y/%m/%d %H:%M:%S')"
+}
+
 info_log() {
-  printf "${COLOR_BLUE} [INFO] %s${COLOR_END}${LINE}" $1;
+  printf "${COLOR_BLUE}[$(timestamp)] [INFO] $1${COLOR_END}${LINE}";
 }
 
 warn_log() {
-  printf "${COLOR_YELLOW} [WARN] %s${COLOR_END}${LINE}" $1;
+  printf "${COLOR_YELLOW}[$(timestamp)] [WARN] $1${COLOR_END}${LINE}";
 }
 
 error_log() {
-  printf "${COLOR_RED} [ERROR] %s${COLOR_END}${LINE}" $1;
+  printf "${COLOR_RED}[$(timestamp)] [ERROR] $1${COLOR_END}${LINE}";
 }
 
