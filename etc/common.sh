@@ -8,6 +8,7 @@ info_log "exec common.sh"
 
 # Ruby Bundler
 gem install bundler
+gem install bundle
 
 # oh-my-zsh!
 # do nothing...
