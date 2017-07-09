@@ -5,9 +5,9 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 . "$CURRENT_PATH"/os.sh
 . "$CURRENT_PATH"/logger.sh
 
-info_log "-----------------------------------------"
-info_log "start install"
-info_log "-----------------------------------------"
+info_log "*****************************************"
+info_log "Starting install."
+info_log "*****************************************"
 
 if is_macos; then
   sh "$CURRENT_PATH"/mac.sh
