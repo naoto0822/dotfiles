@@ -18,6 +18,9 @@ sudo yum -y install ruby-devel
 sudo yum -y install perl-ExtUtils-Embed
 sudo yum -y install python-devel
 sudo yum -y install zsh
+sudo yum -y install openssl-devel
+sudo yum -y install readline-devel
+sudo yum -y install zlib-devel
 
 # vim with lua
 # build and make.
