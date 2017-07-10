@@ -38,6 +38,7 @@ cd vim80
   --with-python-config-dir=/usr/lib64/python2.6/config \
   --enable-rubyinterp \
   --with-ruby-command=/usr/bin/ruby \
+  --with-lua-prefix=/usr \
 
 sudo make
 sudo make install
