@@ -25,9 +25,10 @@ sudo yum -y install zlib-devel
 # vim with lua
 # build and make.
 cd /usr/local/src/
-sudo wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2
-sudo tar xvf vim-8.0.tar.bz2
-cd vim80
+git clone https://github.com/vim/vim.git
+cd vim
+git pull
+sudo make distclean
 
 ./configure \
   --enable-multibyte \
