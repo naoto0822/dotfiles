@@ -25,8 +25,8 @@ sudo yum -y install zlib-devel
 # vim with lua
 # build and make.
 cd /usr/local/src/
-git clone https://github.com/vim/vim.git
-cd vim
+sudo git clone https://github.com/vim/vim.git
+cd vim/
 git pull
 sudo make distclean
 
