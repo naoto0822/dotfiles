@@ -21,6 +21,7 @@ sudo yum -y install zsh
 sudo yum -y install openssl-devel
 sudo yum -y install readline-devel
 sudo yum -y install zlib-devel
+sudo yum -y install tmux
 
 # vim with lua
 # build and make.
