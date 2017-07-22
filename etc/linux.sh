@@ -23,6 +23,16 @@ sudo yum -y install readline-devel
 sudo yum -y install zlib-devel
 sudo yum -y install tmux
 
+cd /usr/local/src/
+sudo wget "http://www.lua.org/ftp/lua-5.3.4.tar.gz"
+sudo tar xf lua-5.3.4.tar.gz
+cd lua-5.3.4
+sudo make linux
+sudo make install
+cd src
+sudo mkdir include
+sudo ln -s *.h ./include
+
 # vim with lua
 # build and make.
 cd /usr/local/src/
@@ -36,11 +46,12 @@ sudo make distclean
   --with-features=huge \
   --enable-luainterp \
   --enable-perlinterp \
-  --enable-pythoninterp \
+  --enable-pythoninterp=dynamic \
   --with-python-config-dir=/usr/lib64/python2.6/config \
-  --enable-rubyinterp \
+  --enable-rubyinterp=dynamic \
   --with-ruby-command=~/.rbenv/shims/ruby \
   --enable-cscope \
+  --with-lua-prefix=/usr/local/src/lua-5.3.4/src \
   --enable-fail-if-missing \
 
 sudo make
