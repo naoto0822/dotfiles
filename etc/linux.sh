@@ -39,8 +39,9 @@ sudo make distclean
   --enable-pythoninterp \
   --with-python-config-dir=/usr/lib64/python2.6/config \
   --enable-rubyinterp \
-  --with-ruby-command=/usr/bin/ruby \
-  --with-lua-prefix=/usr \
+  --with-ruby-command=~/.rbenv/shims/ruby \
+  --enable-cscope \
+  --enable-fail-if-missing \
 
 sudo make
 sudo make install
