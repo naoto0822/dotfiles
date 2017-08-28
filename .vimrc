@@ -4,6 +4,7 @@ Plug 'tpope/vim-sensible'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-endwise'
 Plug 'marcus/rsense'
+Plug 'chase/vim-ansible-yaml'
 call plug#end()
 
 " neocomplete.vim
