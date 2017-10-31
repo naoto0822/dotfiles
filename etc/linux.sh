@@ -60,7 +60,7 @@ sudo make install
 cd $HOME/dotfiles
 
 # Zsh
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
 
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
