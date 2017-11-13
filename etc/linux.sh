@@ -55,8 +55,8 @@ sudo ./configure \
   --with-python-config-dir=/usr/lib64/python2.6/config \
   --enable-rubyinterp=dynamic \
   --with-ruby-command=~/.rbenv/shims/ruby \
-  --enable-luainterp \
-  --with-lua-prefix=/usr/local/src/lua-5.3.4/src \
+  --enable-luainterp=yes \
+  --with-lua-prefix=/usr/local \
   --enable-fail-if-missing \
 
 sudo make
