@@ -13,6 +13,7 @@ sudo yum -y install make
 sudo yum -y install gcc
 sudo yum -y install mercurial
 sudo yum -y install ncurses-devel
+sudo yum -y install lua
 sudo yum -y install lua-devel
 sudo yum -y install ruby-devel
 sudo yum -y install perl-ExtUtils-Embed
@@ -23,15 +24,15 @@ sudo yum -y install readline-devel
 sudo yum -y install zlib-devel
 sudo yum -y install tmux
 
-cd /usr/local/src/
-sudo wget "http://www.lua.org/ftp/lua-5.3.4.tar.gz"
-sudo tar xf lua-5.3.4.tar.gz
-cd lua-5.3.4
-sudo make linux
-sudo make install
-cd src
-sudo mkdir include
-sudo ln -s *.h ./include
+#cd /usr/local/src/
+#sudo wget "http://www.lua.org/ftp/lua-5.3.4.tar.gz"
+#sudo tar xf lua-5.3.4.tar.gz
+#cd lua-5.3.4
+#sudo make linux
+#sudo make install
+#cd src
+#sudo mkdir include
+#sudo ln -s *.h ./include
 
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
