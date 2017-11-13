@@ -75,6 +75,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# base
+export PATH=$PATH:$HOME/bin:/sbin:/usr/sbin
+
 # homebrew
 export PATH=/usr/local/bin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
