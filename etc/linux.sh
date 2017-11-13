@@ -33,6 +33,10 @@ cd src
 sudo mkdir include
 sudo ln -s *.h ./include
 
+# rbenv
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+
 # vim with lua
 # build and make.
 cd /usr/local/src/
@@ -42,6 +46,7 @@ git pull
 sudo make distclean
 
 sudo ./configure \
+  --prefix=/usr/local \
   --with-features=huge \
   --enable-multibyte \
   --enable-cscope \
@@ -61,10 +66,6 @@ cd $HOME/dotfiles
 
 # Zsh
 sudo chsh -s /bin/zsh
-
-# rbenv
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 # tig
 git clone git@github.com:jonas/tig.git $HOME/dotfiles/vendor/tig
