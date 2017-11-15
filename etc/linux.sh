@@ -24,16 +24,6 @@ sudo yum -y install readline-devel
 sudo yum -y install zlib-devel
 sudo yum -y install tmux
 
-#cd /usr/local/src/
-#sudo wget "http://www.lua.org/ftp/lua-5.3.4.tar.gz"
-#sudo tar xf lua-5.3.4.tar.gz
-#cd lua-5.3.4
-#sudo make linux
-#sudo make install
-#cd src
-#sudo mkdir include
-#sudo ln -s *.h ./include
-
 # rbenv
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
