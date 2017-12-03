@@ -1,0 +1,5 @@
+Host rss2slack
+  HostName rss2slack.com
+  Port 8022
+  User rss2slack
+  IdentityFile ~/.ssh/id_rsa_rss2slack
