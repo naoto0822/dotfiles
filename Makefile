@@ -1,7 +1,7 @@
 ## referenced b4b4r07/dotfiles
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES := $(wildcard .??*)
-EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml
+EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml .ssh_config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 all:
@@ -39,6 +39,7 @@ update:
 deploy:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	cp -rf vendor/.oh-my-zsh $(HOME)/
+	cp -f .ssh_config $(HOME)/.ssh/config
 
 init:
 	@sh $(DOTPATH)/etc/init.sh
