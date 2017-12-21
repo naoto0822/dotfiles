@@ -11,6 +11,11 @@ dotfiles='
  | (_| | | (_) | | |_  |  _| | | | | |  __/ \__ \
   \__,_|  \___/   \__| |_|   |_| |_|  \___| |___/
 
+  See the README for documentation.
+  https://github.com/naoto0822/dotfiles
+
+  Copyright (c) 2017 naoto yamaguchi
+  Licensed under the MIT license.
 '
 
 info_log "$dotfiles"

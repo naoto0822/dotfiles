@@ -5,8 +5,10 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 . "$CURRENT_PATH"/os.sh
 . "$CURRENT_PATH"/logger.sh
 
+sh "$CURRENT_PATH"/say_dotfiles.sh
+
 info_log "*****************************************"
-info_log "Starting install."
+info_log "---> Starting install."
 info_log "*****************************************"
 
 if is_mac_os; then
@@ -20,7 +22,4 @@ fi
 
 info_log "---> common script"
 sh "$CURRENT_PATH"/common.sh
-
-info_log "******************************************"
-info_log "Installed Successfully My Dotfiles :tada: "
-info_log "******************************************"
+sh "$CURRENT_PATH"/say_success.sh
