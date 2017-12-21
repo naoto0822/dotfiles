@@ -9,8 +9,8 @@ info_log "*****************************************"
 info_log "Starting install."
 info_log "*****************************************"
 
-if is_macos; then
-  sh "$CURRENT_PATH"/mac.sh
+if is_mac_os; then
+  sh "$CURRENT_PATH"/mac_os.sh
 elif is_linux; then
   sh "$CURRENT_PATH"/linux.sh
 else

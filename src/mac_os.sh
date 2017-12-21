@@ -4,7 +4,7 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 
 . "$CURRENT_PATH"/logger.sh
 
-info_log "exec mac.sh"
+info_log "exec mac_os.sh"
 
 # Command Line Tools
 if [ ! `which xcode-select` ]; then

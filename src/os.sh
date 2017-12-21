@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# mac or linux or cygwin
+# mac os or linux or cygwin
 export OS
 
 get_os() {
   if [ "$(uname)" = "Darwin" ]; then
-    OS="mac"
+    OS="mac_os"
   elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
     OS="linux"
   elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
@@ -16,9 +16,9 @@ get_os() {
   fi
 }
 
-is_macos() {
+is_mac_os() {
   get_os
-  if [ "$OS" = "mac" ]; then
+  if [ "$OS" = "mac_os" ]; then
     return 0
   else
     return 1
