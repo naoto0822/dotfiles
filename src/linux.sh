@@ -33,8 +33,7 @@ sudo yum -y install zlib-devel
 sudo yum -y install tmux
 
 # rbenv
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+sh "$CURRENT_PATH"/ruby.sh
 
 # vim with lua
 # build and make.

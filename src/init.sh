@@ -18,7 +18,7 @@ else
   exit 1
 fi
 
-info_log "common script"
+info_log "---> common script"
 sh "$CURRENT_PATH"/common.sh
 
 info_log "******************************************"

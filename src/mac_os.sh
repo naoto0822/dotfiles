@@ -6,6 +6,9 @@ CURRENT_PATH=$(cd $(dirname $0) && pwd)
 
 info_log "exec mac_os.sh"
 
+# ruby
+sh "$CURRENT_PATH"/ruby.sh
+
 # Command Line Tools
 if [ ! `which xcode-select` ]; then
   xcode-select --install
