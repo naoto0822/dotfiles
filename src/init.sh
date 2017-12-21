@@ -22,4 +22,4 @@ fi
 
 info_log "---> common script"
 sh "$CURRENT_PATH"/common.sh
-sh "$CURRENT_PATH"/say_success.sh
+sh "$CURRENT_PATH"/say_yeah.sh
