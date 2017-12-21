@@ -19,17 +19,6 @@ help:
 	@echo "make test    : test command"
 	@echo "***************************************************"
 
-yeah:
-	@echo ""
-	@echo "-----------------------------------------"
-	@echo " \    / / //   / /  // | |     //    / / "
-	@echo "  \  / / //____    //__| |    //___ / /  "
-	@echo "   \/ / / ____    / ___  |   / ___   /   "
-	@echo "   / / //        //    | |  //    / /    "
-	@echo "  / / //____/ / //     | | //    / /     "
-	@echo "-----------------------------------------"
-	@echo ""
-
 update:
 	git pull origin master
 	git submodule init
@@ -42,9 +31,9 @@ deploy:
 	cp -f .ssh_config $(HOME)/.ssh/config
 
 init:
-	@sh $(DOTPATH)/etc/init.sh
+	@sh $(DOTPATH)/src/init.sh
 
-install: yeah update deploy init
+install: update deploy init
 
 test:
 	## test
