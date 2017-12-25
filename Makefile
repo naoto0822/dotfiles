@@ -19,6 +19,12 @@ help:
 	@echo "make test    : test command"
 	@echo "***************************************************"
 
+start:
+	@sh $(DOTPATH)/src/say_dotfiles.sh
+
+finish:
+	@sh $(DOTPATH)/src/say_yeah.sh
+
 update:
 	git pull origin master
 	git submodule init
@@ -33,7 +39,7 @@ deploy:
 init:
 	@sh $(DOTPATH)/src/init.sh
 
-install: update deploy init
+install: start update deploy init finish
 
 test:
 	## test
