@@ -1,5 +1,7 @@
 # dotfiles
-[![GitHub issues](https://img.shields.io/github/issues/naoto0822/dotfiles.svg)](https://github.com/naoto0822/dotfiles/issues)
+![](https://img.shields.io/badge/works%20on-RedHat-00AAD4.svg)
+![](https://img.shields.io/badge/works%20on-MacOS-lightgrey.svg)
+~~![](https://img.shields.io/badge/works%20on-Debian-DD4814.svg)~~
 [![license](https://img.shields.io/github/license/naoto0822/dotfiles.svg)](https://github.com/naoto0822/dotfiles/blob/master/LICENSE)
 [![CircleCI](https://circleci.com/gh/naoto0822/dotfiles.svg?style=svg)](https://circleci.com/gh/naoto0822/dotfiles)
 
@@ -14,15 +16,16 @@ $ make install
 ## Requirements
 
 - zsh
-- macOS
+- RedHat or macOS
 - iTerm2 (Solarized Dark)
 
 ## TODO
 
-- [ ] for linux
+- [☓] for RedHat
+- [ ] for Debian
 - [ ] build in Bitrise for macOS
 - [☓] build in CircleCI or TravisCI for linux
-- [ ] ~~control brew package(http://qiita.com/ryurock/items/1432578d364985f6cb06)~~
+- [ ] control brew package(http://qiita.com/ryurock/items/1432578d364985f6cb06)
 - [ ] change oh-my-zsh
 
 ## License
