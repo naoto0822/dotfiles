@@ -5,6 +5,7 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-endwise'
 Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call plug#end()
 
 " neocomplete.vim
@@ -17,6 +18,10 @@ if !exists('g:neocomplete#keyword_patterns')
   let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
@@ -39,6 +44,9 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
 
 " rsense
 let g:rsenseUseOmniFunc = 1
