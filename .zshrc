@@ -88,6 +88,14 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init - zsh)";
 fi
 
+# goenv
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
+
+# go
+export GOPATH=$HOME/workspace/go
+export PATH=$PATH:$GOPATH/bin
+
 # pyenv
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"

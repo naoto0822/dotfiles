@@ -35,6 +35,9 @@ sudo yum -y install tmux
 # rbenv
 sh "$CURRENT_PATH"/ruby.sh
 
+# goenv
+sh "$CURRENT_PATH"/goenv.sh
+
 # vim with lua
 # build and make.
 cd /usr/local/src/

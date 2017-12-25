@@ -9,6 +9,9 @@ info_log "---> exec mac_os.sh"
 # ruby
 sh "$CURRENT_PATH"/ruby.sh
 
+# goenv
+sh "$CURRENT_PATH"/goenv.sh
+
 # Command Line Tools
 if [ ! `which xcode-select` ]; then
   xcode-select --install
