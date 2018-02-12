@@ -93,7 +93,8 @@ export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
 
 # go
-export GOPATH=$HOME/workspace/go
+# for Mac
+export GOPATH=$HOME/Documents/workspace/go
 export PATH=$PATH:$GOPATH/bin
 
 # pyenv
