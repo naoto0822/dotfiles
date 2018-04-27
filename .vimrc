@@ -6,6 +6,7 @@ Plug 'tpope/vim-endwise'
 Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle'] }
 call plug#end()
 
 " neocomplete.vim
@@ -38,6 +39,7 @@ inoremap ' ''<ESC>i
 inoremap '<Enter> ''<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
 inoremap "<Enter> ""<Left><CR><ESC><S-o>
+map <C-n> :NERDTreeToggle<CR>
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
