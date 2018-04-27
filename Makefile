@@ -34,7 +34,7 @@ deploy:
 
 ## exec provision shell
 init:
-	@sh $(DOTPATH)/src/init.sh
+	@sh $(DOTPATH)/bin/init
 
 ## sandbox...
 test:
