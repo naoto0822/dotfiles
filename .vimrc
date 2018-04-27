@@ -45,6 +45,11 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" status line
+highlight StatusLine ctermfg=DarkGray ctermbg=White
+autocmd InsertEnter * highlight StatusLine ctermfg=DarkYellow ctermbg=White
+autocmd Insertleave * highlight StatusLine ctermfg=DarkGray ctermbg=White
+
 " rsense
 let g:rsenseUseOmniFunc = 1
 
@@ -93,3 +98,4 @@ if expand("%:t") =~ ".*\.go"
   autocmd FileType go :highlight goErr cterm=bold ctermfg=214
   autocmd FileType go :match goErr /\<err\>/
 endif
+
