@@ -4,10 +4,6 @@ CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml .ssh_config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
-## show help
-help:
-	@make2help $(MAKEFILE_LIST)
-
 ## install
 all: start dep update deploy init finish
 
@@ -19,6 +15,7 @@ start:
 finish:
 	@sh $(DOTPATH)/src/say_yeah.sh
 
+## install dependencies
 dep:
 	go get github.com/Songmu/make2help/cmd/make2help
 
@@ -43,3 +40,9 @@ init:
 test:
 	## test
 	echo $(DOTPATH)
+
+## show help
+help:
+	@make2help $(MAKEFILE_LIST)
+
+.PHONY: start finish dep update deploy init test help
