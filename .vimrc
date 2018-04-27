@@ -45,9 +45,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-autocmd FileType go :highlight goErr cterm=bold ctermfg=214
-autocmd FileType go :match goErr /\<err\>/
-
 " rsense
 let g:rsenseUseOmniFunc = 1
 
@@ -86,4 +83,13 @@ if expand("%:t") =~ ".*\.sh"
   set expandtab
   set tabstop=2
   set shiftwidth=2
+endif
+
+" go
+if expand("%:t") =~ ".*\.go"
+  set noexpandtab
+  set tabstop=4
+  set shiftwidth=4
+  autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+  autocmd FileType go :match goErr /\<err\>/
 endif
