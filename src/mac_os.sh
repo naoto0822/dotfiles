@@ -32,3 +32,5 @@ fi
 # local Circle CI
 # sh "$CURRENT_PATH"/local_ci.sh
 
+# font
+sh "$CURRENT_PATH"/font.sh
