@@ -5,7 +5,7 @@ EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml .ssh_config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 ## install
-all: start dep update deploy init finish
+all: start update deploy init dep finish
 
 ## echo say_dotfiles
 start:
@@ -14,10 +14,6 @@ start:
 ## echo say_yeah
 finish:
 	@sh $(DOTPATH)/src/say_yeah.sh
-
-## install dependencies
-dep:
-	go get github.com/Songmu/make2help/cmd/make2help
 
 ## update repo and submodule
 update:
@@ -35,6 +31,10 @@ deploy:
 ## exec provision shell
 init:
 	@sh $(DOTPATH)/bin/init
+
+## install dependencies
+dep:
+	go get github.com/Songmu/make2help/cmd/make2help
 
 ## sandbox...
 test:
