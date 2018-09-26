@@ -70,6 +70,8 @@ set backspace=2
 set wildmenu
 set ruler
 set clipboard=unnamed
+set background=dark
+colorscheme solarized
 
 " ruby
 if expand("%:t") =~ ".*\.rb"
