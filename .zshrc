@@ -91,6 +91,7 @@ fi
 # goenv
 export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
+#export GOROOT=`go env GOROOT`
 
 # go
 # for Mac

@@ -30,6 +30,7 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
 
 " rsense
 let g:rsenseUseOmniFunc = 1
@@ -110,7 +111,7 @@ if expand("%:t") =~ ".*\.go"
   set noexpandtab
   set tabstop=4
   set shiftwidth=4
-  autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+  autocmd FileType go :highlight goErr ctermfg=214
   autocmd FileType go :match goErr /\<err\>/
 endif
 
