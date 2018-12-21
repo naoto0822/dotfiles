@@ -27,8 +27,6 @@ deploy:
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	cp -rf vendor/.oh-my-zsh $(HOME)/
 	cp -f .ssh_config $(HOME)/.ssh/config
-	mkdir -p $(HOME)/.vim/colors
-	cp -rf vendor/vim-colors-solarized/colors/solarized.vim $(HOME)/.vim/colors/
 
 ## exec provision shell
 init:
