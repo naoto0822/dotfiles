@@ -7,6 +7,7 @@ Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle'] }
+Plug 'mattn/vim-trex'
 call plug#end()
 
 " neocomplete.vim
