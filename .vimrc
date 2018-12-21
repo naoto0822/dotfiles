@@ -22,10 +22,19 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
+" vim-go
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_auto_type_info = 1
 
+" rsense
+let g:rsenseUseOmniFunc = 1
+
+" key map
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -41,8 +50,11 @@ inoremap ' ''<ESC>i
 inoremap '<Enter> ''<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
 inoremap "<Enter> ""<Left><CR><ESC><S-o>
-map <C-n> :NERDTreeToggle<CR>
+inoremap <silent> jj <ESC>
 
+noremap <C-n> :NERDTreeToggle<CR>
+
+" autocmd
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -53,9 +65,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 highlight StatusLine ctermfg=DarkGray ctermbg=White
 autocmd InsertEnter * highlight StatusLine ctermfg=DarkYellow ctermbg=White
 autocmd Insertleave * highlight StatusLine ctermfg=DarkGray ctermbg=White
-
-" rsense
-let g:rsenseUseOmniFunc = 1
 
 " Default
 syntax on
