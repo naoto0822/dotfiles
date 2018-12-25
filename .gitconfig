@@ -1,6 +1,9 @@
 [user]
-	name = naoto0822
-	email = n.h.in.m.h@gmail.com
+	name = yamaguchi-naoto-xa
+	email = yamaguchi_naoto_xa@cyberagent.co.jp
 
 [color]
   ui = auto
+
+[url "git@ghe.ca-tools.org:"]
+  insteadOf = https://ghe.ca-tools.org/

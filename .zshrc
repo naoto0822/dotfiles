@@ -115,3 +115,6 @@ if [ -d "$tig" ]; then
   export MANPATH=$tig/share/man:$MANPATH
   export PATH=$tig/bin:$PATH
 fi
+
+# java home
+export JAVA_HOME=`/usr/libexec/java_home`
