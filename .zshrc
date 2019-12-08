@@ -115,3 +115,6 @@ if [ -d "$tig" ]; then
   export MANPATH=$tig/share/man:$MANPATH
   export PATH=$tig/bin:$PATH
 fi
+
+# ssh
+export PATH="/usr/local/opt/openssl/bin:$PATH"

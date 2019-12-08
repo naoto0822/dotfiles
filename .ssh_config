@@ -1,3 +1,6 @@
+# Include ~/Documents/workspace/cpmjp/cpmjp-provisioner/ssh_config
+# Include ~/Documents/workspace/cpmjp/cpmjp-provisioner/mi6/provisioner/ssh_config
+
 Host rss2slack
   HostName rss2slack.com
   Port 8022
