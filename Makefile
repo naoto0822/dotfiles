@@ -4,6 +4,8 @@ CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml .ssh_config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
+export GO111MODULE:=on
+
 ## install
 all: start update deploy init dep finish
 
@@ -34,7 +36,7 @@ init:
 
 ## install dependencies
 dep:
-	go get github.com/Songmu/make2help/cmd/make2help
+	GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
 ## sandbox...
 test:

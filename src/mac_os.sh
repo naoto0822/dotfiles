@@ -36,4 +36,4 @@ fi
 sh "$CURRENT_PATH"/font.sh
 
 # TODO: brew casc
-brew install vim --with-lua
+brew install vim

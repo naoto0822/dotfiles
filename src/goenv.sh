@@ -1,5 +1,9 @@
 #!/bin/sh
 
 if [ ! -d $HOME/.goenv ]; then
-  git clone https://github.com/dataich/goenv.git $HOME/.goenv
+  if [ `which brew` ]; then
+    brew install goenv
+  else
+    git clone https://github.com/dataich/goenv.git $HOME/.goenv
+  fi
 fi
