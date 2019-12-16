@@ -9,12 +9,13 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'tpope/vim-endwise'
 Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
+Plug 'itchyny/lightline.vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call plug#end()
 
 " ########################################
 " base
 " ########################################
-
 set nocompatible
 syntax on
 syntax enable
@@ -37,10 +38,9 @@ set background=dark
 colorscheme solarized
 
 " lsp
-let g:lsp_diagnostics_enabled = 0
-" let g:lsp_async_completion = 1
-let g:lsp_log_verbose = 0
-let g:lsp_log_file = expand("~/vim-lsp.log")
+let g:lsp_async_completion = 1
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand("~/vim-lsp.log")
 
 " keymap
 inoremap { {}<Left>
@@ -61,16 +61,15 @@ inoremap <C-k> <Up>
 inoremap <C-n> <Left>
 inoremap <C-l> <Right>
 
-" status line
+" lightline
 set laststatus=2
-highlight StatusLine ctermfg=DarkGray ctermbg=White
-autocmd InsertEnter * highlight StatusLine ctermfg=DarkYellow ctermbg=White
-autocmd Insertleave * highlight StatusLine ctermfg=DarkGray ctermbg=White
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 " ########################################
 " Go
 " ########################################
-
 if expand("%:t") =~ ".*\.go"
   set noexpandtab
   set tabstop=4
@@ -86,32 +85,30 @@ if expand("%:t") =~ ".*\.go"
   let g:go_highlight_extra_types = 1
   let g:go_auto_type_info = 0
   let g:go_auto_sameids = 0
-  let g:go_gocode_unimported_packages = 1
-  let g:go_gopls_complete_unimported = 1
-  let g:go_gopls_deep_completion = 1
-  let g:go_gopls_fuzzy_matching = 1
-  let g:go_gopls_use_placeholders = 1
   let g:go_def_mode = 'gopls'
   let g:go_info_mode = 'gopls'
+  let g:go_code_completion_enabled = 0
+  let g:go_def_mapping_enabled = 0
 
   if executable('gopls')
     augroup LspGo
       au!
       au User lsp_setup call lsp#register_server({
-          \ 'name': 'gopls',
-          \ 'cmd': {server_info->['gopls']},
-          \ 'whitelist': ['go'],
-          \ 'workspace_config': {'gopls': {
-            \     'staticcheck': v:true,
-            \     'completeUnimported': v:true,
-            \     'caseSensitiveCompletion': v:true,
-            \     'usePlaceholders': v:true,
-            \     'completionDocumentation': v:true,
-            \     'watchFileChanges': v:true,
-            \     'hoverKind': 'SingleLine',
-            \   }},
-          \ })
-      " au FileType go setlocal omnifunc=lsp#complete
+            \ 'name': 'gopls',
+            \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+            \ 'whitelist': ['go'],
+            \ 'workspace_config': {'gopls': {
+              \ 'completeUnimported': v:true,
+              \ 'caseSensitiveCompletion': v:true,
+              \ 'usePlaceholders': v:true,
+              \ 'completionDocumentation': v:true,
+              \ 'watchFileChanges': v:true,
+              \ 'hoverKind': 'SingleLine',
+              \ }},
+            \ })
+      au FileType go setlocal omnifunc=lsp#complete
+      au FileType go nmap <buffer> <C-]> <plug>(lsp-definition)
+      au FileType go nmap <buffer> gd <plug>(lsp-definition)
     augroup END
   endif
 endif
@@ -119,7 +116,6 @@ endif
 " ########################################
 " Ruby
 " ########################################
-
 if expand("%:t") =~ ".*\.rb"
   set expandtab
   set tabstop=2
@@ -130,18 +126,15 @@ endif
 " ########################################
 " Makefile
 " ########################################
-
 if expand("%:t") =~ "Makefile"
   set noexpandtab
   set tabstop=4
   set shiftwidth=4
 endif
 
-
 " ########################################
 " shell
 " ########################################
-
 if expand("%:t") =~ ".*\.sh"
   set expandtab
   set tabstop=2

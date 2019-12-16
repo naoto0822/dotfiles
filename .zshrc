@@ -80,6 +80,7 @@ export PATH=$PATH:$HOME/bin:/sbin:/usr/sbin
 
 # homebrew
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export HOMEBREW_NO_ANALYTICS=1
 
 # rbenv
@@ -89,12 +90,12 @@ if which rbenv > /dev/null; then
 fi
 
 # goenv
-export PATH="$HOME/.goenv/bin:$PATH"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"
-#export GOROOT=`go env GOROOT`
 
 # go
-# for Mac
 export GOPATH=$HOME/Documents/workspace/go
 export PATH=$PATH:$GOPATH/bin
 
