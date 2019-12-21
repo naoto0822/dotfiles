@@ -20,7 +20,7 @@ pull:
 	# git submodule update
 	# git submodule foreach git pull origin master
 
-## exec provision shell
+## exec provision
 pkg:
 	$(foreach val, $(wildcard ./etc/*.sh), DOTPATH=$(DOTPATH) bash $(DOTPATH)/$(val);)
 
@@ -41,5 +41,9 @@ godep:
 ## show help
 help:
 	@make2help $(MAKEFILE_LIST)
+
+## test
+test:
+	@echo $(DOTFILES)
 
 .PHONY: install update pull pkg deploy dep godep help 
