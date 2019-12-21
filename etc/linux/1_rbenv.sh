@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! -d $HOME/.rbenv ]; then
   git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
@@ -6,3 +6,4 @@ if [ ! -d $HOME/.rbenv ]; then
   gem install bundler
   gem install bundle
 fi
+

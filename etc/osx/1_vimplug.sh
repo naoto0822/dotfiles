@@ -1,10 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-CURRENT_PATH=$(cd $(dirname $0) && pwd)
-
-. "$CURRENT_PATH"/logger.sh
-
-info_log "---> exec common.sh"
+source "$DOTPATH"/etc/util/logger.sh
 
 # vim-plug
 info_log "---> install vim-plug"

@@ -1,4 +1,3 @@
-## referenced b4b4r07/dotfiles
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml .ssh_config
@@ -6,45 +5,41 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 export GO111MODULE:=on
 
-## install
-all: start update deploy init dep finish
+## install dotfiles
+install:
+	DOTPATH=$(DOTPATH) bash $(DOTPATH)/install
 
-## echo say_dotfiles
-start:
-	@sh $(DOTPATH)/src/say_dotfiles.sh
-
-## echo say_yeah
-finish:
-	@sh $(DOTPATH)/src/say_yeah.sh
-
-## update repo and submodule
+## update dotfiles
 update:
-	git pull origin master
-	git submodule init
-	git submodule update
-	git submodule foreach git pull origin master
+	DOTPATH=$(DOTPATH) bash $(DOTPATH)/update
 
-## replace dotfiles
-deploy:
-	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
-	cp -rf vendor/.oh-my-zsh $(HOME)/
-	cp -f .ssh_config $(HOME)/.ssh/config
+## pull repo and submodule
+pull:
+	git pull origin master
+	# git submodule init
+	# git submodule update
+	# git submodule foreach git pull origin master
 
 ## exec provision shell
-init:
-	@sh $(DOTPATH)/bin/init
+pkg:
+	$(foreach val, $(wildcard ./etc/*.sh), DOTPATH=$(DOTPATH) bash $(DOTPATH)/$(val);)
 
-## install dependencies
+## deploy dotfiles
+deploy:
+	$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+	cp -f .ssh_config $(HOME)/.ssh/config;
+
+## dep resolved dependencies after install
 dep:
-	GO111MODULE=on go get golang.org/x/tools/gopls@latest
+	@echo "NOOP"
 
-## sandbox...
-test:
-	## test
-	echo $(DOTPATH)
+## install go dependencies
+godep:
+	GO111MODULE=on go get golang.org/x/tools/gopls@latest
+	go get github.com/Songmu/make2help/cmd/make2help
 
 ## show help
 help:
 	@make2help $(MAKEFILE_LIST)
 
-.PHONY: start finish dep update deploy init test help
+.PHONY: install update pull pkg deploy dep godep help 

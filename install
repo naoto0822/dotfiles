@@ -1,0 +1,64 @@
+#!/bin/bash
+
+source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/etc/util/echo_task.sh
+
+echo_start () {
+  bash "$DOTPATH"/etc/util/say_dotfiles.sh
+}
+
+echo_end () {
+  bash "$DOTPATH"/etc/util/say_yeah.sh
+}
+
+pull () {
+  echo_task "PULL"
+
+  echo_command "make pull"
+  make pull
+
+  echo_empty
+}
+
+install_package () {
+  echo_task "INSTALL PACKAGE"
+
+  echo_command "make pkg"
+  make pkg
+
+  echo_empty
+}
+
+deploy_dotfiles () {
+  echo_task "DEPLOY DOTFILES"
+
+  echo_command "make deploy"
+  make deploy
+
+  echo_empty
+}
+
+dep () {
+  echo_task "DEP"
+
+  echo_command "make dep"
+  make dep
+
+  echo_empty
+}
+
+main () {
+  echo_start
+
+  pull
+
+  install_package
+
+  deploy_dotfiles
+
+  dep
+
+  echo_end
+}
+
+main

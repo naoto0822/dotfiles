@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-CURRENT_PATH=$(cd $(dirname $0) && pwd)
-. "$CURRENT_PATH"/logger.sh
+source "$DOTPATH"/etc/util/logger.sh
 
 dotfiles='
 
@@ -14,7 +13,7 @@ dotfiles='
   See the README for documentation.
   https://github.com/naoto0822/dotfiles
 
-  Copyright (c) 2017 naoto yamaguchi
+  Copyright (c) 2019 naoto yamaguchi
   Licensed under the MIT license.
 '
 

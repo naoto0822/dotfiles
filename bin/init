@@ -1,3 +1,0 @@
-#!/bin/sh
-CURRENT_PATH=$(cd $(dirname $0) && pwd)
-sh "$CURRENT_PATH"/../src/init.sh

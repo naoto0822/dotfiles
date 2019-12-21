@@ -96,6 +96,7 @@ export GOENV_DISABLE_GOPATH=1
 eval "$(goenv init -)"
 
 # go
+# NOTE: for local mac
 export GOPATH=$HOME/Documents/workspace/go
 export PATH=$PATH:$GOPATH/bin
 

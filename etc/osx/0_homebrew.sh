@@ -1,18 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
-CURRENT_PATH=$(cd $(dirname $0) && pwd)
+source "$DOTPATH"/etc/util/logger.sh
 
-. "$CURRENT_PATH"/logger.sh
-
-info_log "---> exec mac_os.sh"
-
-# ruby
-sh "$CURRENT_PATH"/ruby.sh
-
-# goenv
-sh "$CURRENT_PATH"/goenv.sh
-
-# Command Line Tools
 if [ ! `which xcode-select` ]; then
   xcode-select --install
   info_log "---> installed successfully Command Line Tools !"
@@ -20,7 +9,6 @@ else
   info_log "---> already installed Command Line Tools"
 fi
 
-# homebrew
 if [ ! `which brew` ]; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew doctor
@@ -29,11 +17,6 @@ else
   info_log "---> already installed homebrew"
 fi
 
-# local Circle CI
-# sh "$CURRENT_PATH"/local_ci.sh
-
-# font
-sh "$CURRENT_PATH"/font.sh
-
-# TODO: brew casc
-brew install vim
+info_log "---> install brew pkg"
+brew tap Homebrew/bundle
+brew bundle --verbose --file="$DOTPATH/Brewfile"

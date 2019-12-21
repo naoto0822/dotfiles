@@ -1,7 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-CURRENT_PATH=$(cd $(dirname $0) && pwd)
-. "$CURRENT_PATH"/logger.sh
+source "$DOTPATH"/etc/util/logger.sh
 
 yeah='
 
