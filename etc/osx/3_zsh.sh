@@ -11,6 +11,6 @@ else
   info_log "---> already default shell is zsh!"
 fi
 
-if [ ! -e $HOME/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ ! -e $HOME/.zplugin ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 fi
