@@ -28,9 +28,9 @@ setopt hash_list_all
 # theme_default() {
 # }
 #
-# config_powerline_prompt() {
+config_powerline_prompt() {
   # escape warning
-# }
+}
 
 #
 # Plugins
