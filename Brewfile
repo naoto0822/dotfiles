@@ -25,6 +25,7 @@ brew "jq"
 brew "tmux"
 brew "goenv"
 brew "zsh"
+brew "exa"
 
 # cask "alfred"
 # cask "iterm2"
