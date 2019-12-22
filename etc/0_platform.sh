@@ -4,7 +4,8 @@ source "$DOTPATH"/etc/util/logger.sh
 
 case "$(uname)" in
 Darwin*)
-  for file in "$DOTPATH/etc/osx/*.sh"; do
+  for file in $(echo "$DOTPATH/etc/osx/*.sh"); do
+    info_log "---> running $file"
     bash $file
   done
   ;;
