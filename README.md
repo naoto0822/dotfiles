@@ -1,16 +1,25 @@
 # dotfiles
-![](https://img.shields.io/badge/works%20on-RedHat-00AAD4.svg)
+<!-- ![](https://img.shields.io/badge/works%20on-RedHat-00AAD4.svg) -->
 ![](https://img.shields.io/badge/works%20on-MacOS-lightgrey.svg)
-~~![](https://img.shields.io/badge/works%20on-Debian-DD4814.svg)~~
 [![license](https://img.shields.io/github/license/naoto0822/dotfiles.svg)](https://github.com/naoto0822/dotfiles/blob/master/LICENSE)
 [![CircleCI](https://circleci.com/gh/naoto0822/dotfiles.svg?style=svg)](https://circleci.com/gh/naoto0822/dotfiles)
 
+<img src="./docs/screenshot.png" width="800" height="400">
+
 ## Getting Started
+
+### install
 
 ```sh
 $ git clone git@github.com:naoto0822/dotfiles.git --recursive
 $ cd dotfiles
 $ make install
+```
+
+### update
+
+```sh
+$ make update
 ```
 
 ## Requirements
@@ -21,12 +30,9 @@ $ make install
 
 ## TODO
 
-- [☓] for RedHat
-- [ ] for Debian
-- [ ] build in Bitrise for macOS
-- [☓] build in CircleCI or TravisCI for linux
-- [ ] control brew package(http://qiita.com/ryurock/items/1432578d364985f6cb06)
-- [ ] change oh-my-zsh
+- [ ] for RedHat
+- [ ] build multi OS in GH action
+- [ ] update CircleCI ver2
 
 ## License
 
