@@ -14,6 +14,14 @@ autoload -Uz _zplugin
 ### End of Zplugin installer's chunk
 
 #
+# History
+#
+
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=$HISTSIZE
+
+#
 # Alias
 #
 
@@ -29,6 +37,10 @@ setopt autocd
 setopt auto_list
 setopt auto_pushd
 setopt hash_list_all
+setopt completealiases
+setopt always_to_end
+setopt hist_expand
+setopt append_history
 
 #
 # Function
