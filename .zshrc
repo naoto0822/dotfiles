@@ -14,6 +14,14 @@ autoload -Uz _zplugin
 ### End of Zplugin installer's chunk
 
 #
+# Alias
+#
+
+alias ls="ls -G"
+alias l="ls -laG"
+alias tt="tmux"
+
+#
 # Zsh option
 #
 setopt promptsubst
@@ -29,7 +37,15 @@ setopt hash_list_all
 # }
 #
 config_powerline_prompt() {
-  # escape warning
+  # theme_default
+}
+
+tta() {
+  tt a -t $1
+}
+
+ttd() {
+  tt kill-session -t $1
 }
 
 #
