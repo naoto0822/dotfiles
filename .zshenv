@@ -31,3 +31,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # ssh
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# LLVM
+export PATH="/usr/local/opt/llvm/bin:$PATH"

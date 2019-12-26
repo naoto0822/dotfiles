@@ -67,6 +67,23 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
 
+" #######################################
+" Cpp
+" #######################################
+
+if expand("%:t") =~ ".*\.cpp"
+  if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd', '-background-index']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+    let g:lsp_signs_enabled = 1
+    let g:lsp_diagnostics_echo_cursor = 1
+    au FileType c,cc,cpp,cxx,h,hpp setlocal omnifunc=lsp#complete
+  endif
+endif
+
 " ########################################
 " Go
 " ########################################

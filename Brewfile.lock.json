@@ -2,16 +2,16 @@
   "entries": {
     "tap": {
       "homebrew/bundle": {
-        "revision": "bed1552647b7a181e84c7f89a532128d485bef75"
+        "revision": "8c0ab71c3de2b84af4c35e50fc7f0fd3a6971c9c"
       },
       "homebrew/cask": {
-        "revision": "b98ce11d61bdb2a99b716917de5734b31ae51679"
+        "revision": "bab4e10d92fb5770537a9e466c5b9e7db6a33671"
       },
       "homebrew/cask-versions": {
-        "revision": "29251e026971aa78bc0ff2738bfd0a93972ae977"
+        "revision": "113796204a94f3b3bae3ac8d058397ed2c19f2d4"
       },
       "homebrew/core": {
-        "revision": "6f2c89f09a652b16b8a14a103f48316cd44abbae"
+        "revision": "bde6de7cfcf7074aad8109a3e3221dfe9bcdb0e1"
       },
       "homebrew/services": {
         "revision": "eca39722f130e8bc1e2e322588db493ca0398c01"
@@ -174,7 +174,7 @@
         }
       },
       "ruby-build": {
-        "version": "20191205",
+        "version": "20191223",
         "bottle": false
       },
       "sqlite": {
@@ -291,30 +291,22 @@
         }
       },
       "peco": {
-        "version": "0.5.3",
+        "version": "0.5.4",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/peco-0.5.3.catalina.bottle.tar.gz",
-              "sha256": "cc754e10e1b8c80ce328659814c4450f5b5fcfe8947dc1972631877b52ad3b19"
+              "url": "https://homebrew.bintray.com/bottles/peco-0.5.4.catalina.bottle.tar.gz",
+              "sha256": "4ea47db32f650d926abfeba4ebc210de96a8eb28bd0677acf1eb8fa7ddc365e4"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/peco-0.5.3.mojave.bottle.tar.gz",
-              "sha256": "d2a3d2950d81cf76b42950eba381f3359e0fa8c2b95829f8eb771013ff4cc4a1"
+              "url": "https://homebrew.bintray.com/bottles/peco-0.5.4.mojave.bottle.tar.gz",
+              "sha256": "424c1cd6b0c9d331f65be9cf17f0ca6cd03489fec412f1ad0f4cd067f2a16b93"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/peco-0.5.3.high_sierra.bottle.tar.gz",
-              "sha256": "653707beb0b04d448f7d4184213575df8a6ce138e42abff2861a98a8f1aa60b6"
-            },
-            "sierra": {
-              "url": "https://homebrew.bintray.com/bottles/peco-0.5.3.sierra.bottle.tar.gz",
-              "sha256": "e4a10c067d24b7b790c9e522f9405cb5437d2b11837a3291ca2fd2ba00cfc253"
-            },
-            "el_capitan": {
-              "url": "https://homebrew.bintray.com/bottles/peco-0.5.3.el_capitan.bottle.tar.gz",
-              "sha256": "80596ba0cbd75b50f01c31c406bb3fab28b7f0cffc9bb3e465a3dc6be1e56697"
+              "url": "https://homebrew.bintray.com/bottles/peco-0.5.4.high_sierra.bottle.tar.gz",
+              "sha256": "4422802e055e8b7c47f9a31aac5a9e868d9d1f92818514ecc4b13aa49fa32d9e"
             }
           }
         }
@@ -443,15 +435,36 @@
             }
           }
         }
+      },
+      "llvm": {
+        "version": "9.0.0_1",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/llvm-9.0.0_1.catalina.bottle.tar.gz",
+              "sha256": "a8e2475a1fc5a81f0da83a73d17fd54cc2a686f7b5d8e7ace9ea18885971415f"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/llvm-9.0.0_1.mojave.bottle.tar.gz",
+              "sha256": "418d1e365a59f1ef41b36e444ea72e60f381ba02083659e0375838d81443b151"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/llvm-9.0.0_1.high_sierra.bottle.tar.gz",
+              "sha256": "f9e02c2d5e6a5480e2f3f353d223acb170a9ba19fcd8d3ce38fbbc4e99a7d952"
+            }
+          }
+        }
       }
     }
   },
   "system": {
     "macos": {
       "mojave": {
-        "HOMEBREW_VERSION": "2.2.1",
+        "HOMEBREW_VERSION": "2.2.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "6f2c89f09a652b16b8a14a103f48316cd44abbae",
+        "Homebrew/homebrew-core": "bde6de7cfcf7074aad8109a3e3221dfe9bcdb0e1",
         "CLT": "10.3.0.0.1.1562985497",
         "Xcode": "11.2.1",
         "macOS": "10.14.6"
