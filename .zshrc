@@ -52,6 +52,10 @@ config_powerline_prompt() {
   # theme_default
 }
 
+ttn() {
+  tt new -s $1
+}
+
 tta() {
   tt a -t $1
 }
