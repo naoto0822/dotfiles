@@ -27,6 +27,7 @@ brew "goenv"
 brew "zsh"
 brew "exa"
 brew "llvm"
+brew "clang-format"
 
 # cask "alfred"
 # cask "iterm2"
