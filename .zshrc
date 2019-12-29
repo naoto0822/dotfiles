@@ -18,8 +18,6 @@ autoload -Uz _zplugin
 #
 
 export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=$HISTSIZE
 
 #
 # Alias
@@ -103,6 +101,15 @@ zplugin ice wait"0" blockf lucid
 zplugin light zsh-users/zsh-completions
 
 zplugin light zdharma/fast-syntax-highlighting
+
+zplugin snippet OMZ::lib/compfix.zsh
+zplugin snippet OMZ::lib/completion.zsh
+
+#
+# History
+#
+
+zplugin snippet OMZ::lib/history.zsh
 
 #
 # Theme
