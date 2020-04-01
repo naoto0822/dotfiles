@@ -14,12 +14,6 @@ autoload -Uz _zplugin
 ### End of Zplugin installer's chunk
 
 #
-# History
-#
-
-export HISTFILE="$HOME/.zsh_history"
-
-#
 # Alias
 #
 
