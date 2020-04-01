@@ -76,20 +76,30 @@ zplugin light zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 #
-# Snippets
+# Snippet
 #
 
-# Load OMZ Git library
-zplugin snippet OMZ::lib/git.zsh
+# NOP
 
-# Load Git plugin from OMZ
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
-zplugin cdclear -q
-
-zplugin snippet OMZ::plugins/github/github.plugin.zsh
+#
+# oh-my-zsh
+#
 
 zplugin snippet OMZ::lib/clipboard.zsh
-
+zplugin snippet OMZ::lib/compfix.zsh
+zplugin snippet OMZ::lib/completion.zsh
+zplugin snippet OMZ::lib/correction.zsh
+zplugin snippet OMZ::lib/diagnostics.zsh
+zplugin snippet OMZ::lib/directories.zsh
+zplugin snippet OMZ::lib/functions.zsh
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::lib/grep.zsh
+zplugin snippet OMZ::lib/history.zsh
+zplugin snippet OMZ::lib/misc.zsh
+zplugin snippet OMZ::lib/prompt_info_functions.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin cdclear -q
+zplugin snippet OMZ::plugins/github/github.plugin.zsh
 zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
 #
@@ -102,14 +112,11 @@ zplugin light zsh-users/zsh-completions
 
 zplugin light zdharma/fast-syntax-highlighting
 
-zplugin snippet OMZ::lib/compfix.zsh
-zplugin snippet OMZ::lib/completion.zsh
-
 #
 # History
 #
 
-zplugin snippet OMZ::lib/history.zsh
+# NOP
 
 #
 # Theme
