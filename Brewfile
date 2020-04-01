@@ -30,6 +30,7 @@ brew "llvm"
 brew "clang-format"
 brew "gcc"
 brew "fzf"
+brew "lsd"
 
 # cask "alfred"
 # cask "iterm2"
