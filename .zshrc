@@ -79,6 +79,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 # oh-my-zsh
 #
 
+zplugin snippet OMZ::lib/bzr.zsh
 zplugin snippet OMZ::lib/clipboard.zsh
 zplugin snippet OMZ::lib/compfix.zsh
 zplugin snippet OMZ::lib/completion.zsh
@@ -89,8 +90,12 @@ zplugin snippet OMZ::lib/functions.zsh
 zplugin snippet OMZ::lib/git.zsh
 zplugin snippet OMZ::lib/grep.zsh
 zplugin snippet OMZ::lib/history.zsh
+zplugin snippet OMZ::lib/key-bindings.zsh
 zplugin snippet OMZ::lib/misc.zsh
 zplugin snippet OMZ::lib/prompt_info_functions.zsh
+zplugin snippet OMZ::lib/spectrum.zsh
+zplugin snippet OMZ::lib/termsupport.zsh
+zplugin snippet OMZ::lib/theme-and-appearance.zsh
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
 zplugin cdclear -q
 zplugin snippet OMZ::plugins/github/github.plugin.zsh
