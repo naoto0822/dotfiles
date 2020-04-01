@@ -29,6 +29,7 @@ brew "exa"
 brew "llvm"
 brew "clang-format"
 brew "gcc"
+brew "fzf"
 
 # cask "alfred"
 # cask "iterm2"
