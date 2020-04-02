@@ -32,10 +32,6 @@ setopt list_packed
 setopt list_types
 setopt auto_cd
 
-zstyle ':completion:*:default' menu select=1
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
 # Function
 
 # theme_default() {
@@ -97,6 +93,11 @@ alias tt="tmux"
 alias ls="lsd"
 alias l="lsd -la"
 alias ll="lsd -l"
+
+# Override zsh option
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 ### Added by Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
