@@ -20,9 +20,11 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:"
 
-autoload -Uz compaudit 
-autoload -Uz compinit
-autoload -Uz colors
+autoload -U compaudi
+autoload -U compinit
+compinit
+autoload -U colors
+colors
 
 setopt auto_list 
 setopt auto_menu
@@ -33,12 +35,6 @@ setopt auto_cd
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# Alias
-alias tt="tmux"
-alias ls="lsd"
-alias l="lsd -la"
-alias ll="lsd -l"
 
 # Function
 
@@ -95,6 +91,12 @@ zplugin light zdharma/fast-syntax-highlighting
 
 zplugin env-whitelist 'POWERLEVEL9K_*'
 zplugin ice atinit"config_powerline_prompt"; zplugin light romkatv/powerlevel10k
+
+# Override Alias
+alias tt="tmux"
+alias ls="lsd"
+alias l="lsd -la"
+alias ll="lsd -l"
 
 ### Added by Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
