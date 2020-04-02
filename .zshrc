@@ -13,36 +13,41 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin installer's chunk
 
-#
+# zsh options
+export ZSH_DISABLE_COMPFIX=1
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
+export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:"
+
+autoload -Uz compaudit 
+autoload -Uz compinit
+autoload -Uz colors
+
+setopt auto_list 
+setopt auto_menu
+setopt list_packed
+setopt list_types
+setopt auto_cd
+
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 # Alias
-#
-
-alias ls="ls -G"
-alias l="ls -laG"
 alias tt="tmux"
+alias ls="ls -GF"
 
-#
-# Zsh option
-#
-setopt promptsubst
-setopt autocd
-setopt auto_list
-setopt auto_pushd
-setopt hash_list_all
-setopt completealiases
-setopt always_to_end
-setopt hist_expand
-setopt append_history
-
-#
 # Function
-#
+
 # theme_default() {
 # }
 #
+
 config_powerline_prompt() {
   # theme_default
 }
+
 
 ttn() {
   tt new -s $1
@@ -56,28 +61,11 @@ ttd() {
   tt kill-session -t $1
 }
 
-#
 # Plugins
-#
-
-zplugin ice atclone"dircolors -b LS_COLORS > clrs.zsh" atpull'%atclone' pick"clrs.zsh"
-zplugin load trapd00r/LS_COLORS
-
 zplugin light changyuheng/zsh-interactive-cd
 
 zplugin ice wait'0' atload'_zsh_autosuggest_start' lucid
 zplugin light zsh-users/zsh-autosuggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
-
-#
-# Snippet
-#
-
-# NOP
-
-#
-# oh-my-zsh
-#
 
 zplugin snippet OMZ::lib/bzr.zsh
 zplugin snippet OMZ::lib/clipboard.zsh
@@ -101,25 +89,7 @@ zplugin cdclear -q
 zplugin snippet OMZ::plugins/github/github.plugin.zsh
 zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
 
-#
-# Completion
-#
-
-# zsh
-zplugin ice wait"0" blockf lucid
-zplugin light zsh-users/zsh-completions
-
 zplugin light zdharma/fast-syntax-highlighting
-
-#
-# History
-#
-
-# NOP
-
-#
-# Theme
-#
 
 zplugin env-whitelist 'POWERLEVEL9K_*'
 zplugin ice atinit"config_powerline_prompt"; zplugin light romkatv/powerlevel10k

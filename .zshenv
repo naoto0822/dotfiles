@@ -1,6 +1,3 @@
-# zsh
-export ZSH_DISABLE_COMPFIX=true
-
 # dotfiles
 export DOTPATH=~/Documents/workspace/dotfiles
 
