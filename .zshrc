@@ -36,7 +36,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Alias
 alias tt="tmux"
-alias ls="ls -GF"
+alias ls="lsd"
+alias l="lsd -la"
+alias ll="lsd -l"
 
 # Function
 
