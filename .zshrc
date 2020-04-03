@@ -32,6 +32,9 @@ setopt list_packed
 setopt list_types
 setopt auto_cd
 
+# Alias
+alias tt="tmux"
+
 # Function
 
 # theme_default() {
@@ -89,7 +92,6 @@ zplugin env-whitelist 'POWERLEVEL9K_*'
 zplugin ice atinit"config_powerline_prompt"; zplugin light romkatv/powerlevel10k
 
 # Override Alias
-alias tt="tmux"
 alias ls="lsd"
 alias l="lsd -la"
 alias ll="lsd -l"
