@@ -43,6 +43,8 @@ let g:lsp_async_completion = 1
 " let g:lsp_log_file = expand("~/vim-lsp.log")
 
 " keymap
+inoremap <silent> jj <ESC>
+
 inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
@@ -53,13 +55,19 @@ inoremap ' ''<ESC>i
 inoremap '<Enter> ''<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
 inoremap "<Enter> ""<Left><CR><ESC><S-o>
-inoremap <silent> jj <ESC>
+
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-noremap <C-n> :NERDTreeToggle<CR>
+
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-n> <Left>
 inoremap <C-l> <Right>
+inoremap <C-w> <ESC>$i
+inoremap <C-b> <ESC>0i
+noremap <C-w> <ESC>$
+noremap <C-b> <ESC>0
+
+noremap <C-n> :NERDTreeToggle<CR>
 
 " lightline
 set laststatus=2
