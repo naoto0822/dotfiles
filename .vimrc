@@ -37,11 +37,6 @@ set clipboard=unnamed
 set background=dark
 colorscheme solarized
 
-" lsp
-let g:lsp_async_completion = 1
-" let g:lsp_log_verbose = 1
-" let g:lsp_log_file = expand("~/vim-lsp.log")
-
 " keymap
 inoremap <silent> jj <ESC>
 
@@ -177,3 +172,15 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" lsp
+let g:lsp_async_completion = 1
+" let g:lsp_log_verbose = 1
+" let g:lsp_log_file = expand("~/vim-lsp.log")
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 1
+let g:asyncomplete_popup_delay = 200
+" https://github.com/prabirshrestha/vim-lsp/issues/431
+let g:lsp_text_edit_enabled = 0
