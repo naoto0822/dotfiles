@@ -11,6 +11,8 @@ Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 call plug#end()
 
 " ########################################
