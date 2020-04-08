@@ -122,6 +122,11 @@ if expand("%:t") =~ ".*\.go"
             \ 'name': 'gopls',
             \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
             \ 'whitelist': ['go'],
+            \ 'initialization_options': {
+              \ 'diagnostics': v:true,
+              \ 'completeUnimported': v:true,
+              \ 'matcher': 'fuzzy',
+              \ },
             \ 'workspace_config': {'gopls': {
               \ 'completeUnimported': v:true,
               \ 'caseSensitiveCompletion': v:true,
