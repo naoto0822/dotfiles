@@ -11,13 +11,8 @@ Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
 call plug#end()
 
-" ########################################
-" base
-" ########################################
 set nocompatible
 syntax on
 syntax enable
@@ -39,7 +34,6 @@ set clipboard=unnamed
 set background=dark
 colorscheme solarized
 
-" keymap
 inoremap <silent> jj <ESC>
 
 inoremap { {}<Left>
@@ -53,45 +47,43 @@ inoremap '<Enter> ''<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
 inoremap "<Enter> ""<Left><CR><ESC><S-o>
 
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
-inoremap <C-n> <Left>
+inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-w> <ESC>$i
 inoremap <C-b> <ESC>0i
 noremap <C-w> <ESC>$
 noremap <C-b> <ESC>0
 
-noremap <C-n> :NERDTreeToggle<CR>
-
-" lightline
 set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
 
-" #######################################
-" Cpp
-" #######################################
+noremap <C-n> :NERDTreeToggle<CR>
 
-if expand("%:t") =~ ".*\.cpp"
-  if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-          \ 'name': 'clangd',
-          \ 'cmd': {server_info->['clangd', '-background-index']},
-          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-          \ })
-    let g:lsp_signs_enabled = 1
-    let g:lsp_diagnostics_echo_cursor = 1
-    au FileType c,cc,cpp,cxx,h,hpp setlocal omnifunc=lsp#complete
-  endif
-endif
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-" ########################################
-" Go
-" ########################################
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+
+let g:lsp_async_completion = 1
+"let g:lsp_log_verbose = 1
+"let g:lsp_log_file = expand("~/vim-lsp.log")
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 1
+let g:asyncomplete_popup_delay = 200
+" https://github.com/prabirshrestha/vim-lsp/issues/431
+let g:lsp_text_edit_enabled = 0
+
 if expand("%:t") =~ ".*\.go"
   set noexpandtab
   set tabstop=4
@@ -117,7 +109,7 @@ if expand("%:t") =~ ".*\.go"
       au!
       au User lsp_setup call lsp#register_server({
             \ 'name': 'gopls',
-            \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
+            \ 'cmd': {server_info->['gopls']},
             \ 'whitelist': ['go'],
             \ 'initialization_options': {
               \ 'diagnostics': v:true,
@@ -140,9 +132,19 @@ if expand("%:t") =~ ".*\.go"
   endif
 endif
 
-" ########################################
-" Ruby
-" ########################################
+if expand("%:t") =~ ".*\.cpp"
+  if executable('clangd')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd', '-background-index']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+    let g:lsp_signs_enabled = 1
+    let g:lsp_diagnostics_echo_cursor = 1
+    au FileType c,cc,cpp,cxx,h,hpp setlocal omnifunc=lsp#complete
+  endif
+endif
+
 if expand("%:t") =~ ".*\.rb"
   set expandtab
   set tabstop=2
@@ -150,39 +152,15 @@ if expand("%:t") =~ ".*\.rb"
   let g:rsenseUseOmniFunc = 1
 endif
 
-" ########################################
-" Makefile
-" ########################################
 if expand("%:t") =~ "Makefile"
   set noexpandtab
   set tabstop=4
   set shiftwidth=4
 endif
 
-" ########################################
-" shell
-" ########################################
 if expand("%:t") =~ ".*\.sh"
   set expandtab
   set tabstop=2
   set shiftwidth=2
 endif
 
-" etc
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" lsp
-let g:lsp_async_completion = 1
-" let g:lsp_log_verbose = 1
-" let g:lsp_log_file = expand("~/vim-lsp.log")
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 1
-let g:asyncomplete_popup_delay = 200
-" https://github.com/prabirshrestha/vim-lsp/issues/431
-let g:lsp_text_edit_enabled = 0
