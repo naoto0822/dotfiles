@@ -8,6 +8,25 @@
 
 ## Getting Started
 
+### before manual settings
+
+1. tmp disable sleep on mac
+
+2. install iterm2
+
+[here](https://www.iterm2.com/)
+
+2. set Solarized Dark in iTerm2
+
+3. login AppStore for Homebrew
+
+4. kick `make bootstrap`
+
+- install command line tools
+- change permission zsh dir
+
+5. generate and set a ssh key for github
+
 ### install
 
 ```sh
@@ -15,6 +34,15 @@ $ git clone git@github.com:naoto0822/dotfiles.git --recursive
 $ cd dotfiles
 $ make install
 ```
+### after manual settings
+
+1. restart iTerm2 and start installing zinit plugins
+
+2. exec `p10k configure`
+
+> not override settings
+
+3. open vim and exec `:PlugInstall`
 
 ### update
 
@@ -25,7 +53,8 @@ $ make update
 ## Requirements
 
 - zsh
-- RedHat or macOS
+- vim8
+- macOS
 - iTerm2 (Solarized Dark)
 
 ## TODO
