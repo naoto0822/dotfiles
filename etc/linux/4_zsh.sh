@@ -6,6 +6,6 @@ if [ ! $SHELL = $ZSHPATH ]; then
   chsh -s /bin/zsh
 fi
 
-if [ ! -e $HOME/.zplugin ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+if [ ! -e $HOME/.zinit ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 fi

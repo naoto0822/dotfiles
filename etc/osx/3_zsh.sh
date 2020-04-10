@@ -11,6 +11,6 @@ else
   info_log "---> already default shell is zsh!"
 fi
 
-if [ ! -e $HOME/.zplugin ]; then
+if [ ! -e $HOME/.zinit ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 fi
