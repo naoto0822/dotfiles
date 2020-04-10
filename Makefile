@@ -20,6 +20,10 @@ pull:
 	# git submodule update
 	# git submodule foreach git pull origin master
 
+## bootstrap
+bootstrap:
+	@bash $(DOTPATH)/etc/util/osx_bootstrap.sh
+
 ## exec provision
 pkg:
 	$(foreach val, $(wildcard ./etc/*.sh), DOTPATH=$(DOTPATH) bash $(DOTPATH)/$(val);)
