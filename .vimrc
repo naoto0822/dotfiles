@@ -11,6 +11,7 @@ Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'tpope/vim-surround'
 call plug#end()
 
 set nocompatible
