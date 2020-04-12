@@ -32,6 +32,8 @@ brew "gcc"
 brew "fzf"
 brew "lsd"
 brew "ghq"
+brew "nodebrew"
+brew "awscli"
 
 cask "alfred"
 cask "iterm2"
@@ -40,5 +42,9 @@ cask "google-japanese-ime"
 cask "google-chrome"
 cask "slack"
 cask "spotify"
+cask "mysqlworkbench"
+
+cask "docker"
+brew "docker-compose"
 
 # mas "Xcode", id: 497799835
