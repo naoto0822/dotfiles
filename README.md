@@ -44,6 +44,8 @@ $ make install
 
 3. open vim and exec `:PlugInstall`
 
+4. install go, node, ruby... by goenv, nodebrew, rbenv
+
 ### update
 
 ```sh
