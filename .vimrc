@@ -14,6 +14,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-abolish'
 call plug#end()
 
 set nocompatible
