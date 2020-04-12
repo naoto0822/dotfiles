@@ -12,6 +12,7 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-surround'
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 set nocompatible
@@ -89,6 +90,8 @@ let g:lsp_text_edit_enabled = 0
 
 noremap <C-l><C-h> :LspHover<CR>
 noremap <C-l><C-r> :LspRename<CR>
+
+let g:strip_whitespace_on_save = 1
 
 if expand("%:t") =~ ".*\.go"
   set noexpandtab
