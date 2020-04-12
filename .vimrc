@@ -55,6 +55,7 @@ inoremap <C-w> <ESC>$i
 inoremap <C-b> <ESC>0i
 noremap <C-w> <ESC>$
 noremap <C-b> <ESC>0
+noremap <C-n><C-h> :noh<CR>
 
 set laststatus=2
 let g:lightline = {

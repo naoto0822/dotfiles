@@ -118,6 +118,7 @@ alias gmg="git merge"
 alias grebase="git rebase"
 alias gd="git diff"
 alias gc="git commit"
+alias gout="git checkout"
 
 # Override zsh option
 zstyle ':completion:*:default' menu select=1
