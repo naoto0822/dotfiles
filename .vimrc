@@ -13,6 +13,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 set nocompatible
@@ -92,6 +93,8 @@ noremap <C-l><C-h> :LspHover<CR>
 noremap <C-l><C-r> :LspRename<CR>
 
 let g:strip_whitespace_on_save = 1
+
+let g:indent_guides_enable_on_vim_startup = 1
 
 if expand("%:t") =~ ".*\.go"
   set noexpandtab
