@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-abolish'
+Plug 'vim-scripts/YankRing.vim'
 call plug#end()
 
 set nocompatible
@@ -34,7 +35,7 @@ set showcmd
 set backspace=2
 set wildmenu
 set ruler
-set clipboard+=unnamed
+set clipboard+=unnamed,unnamedplus
 set background=dark
 colorscheme solarized
 set virtualedit=onemore
