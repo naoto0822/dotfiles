@@ -29,7 +29,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 ### End of Powerlevel10k
 
-# zsh options
+# Zsh options
 export ZSH_DISABLE_COMPFIX=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 export CLICOLOR=1
@@ -111,6 +111,13 @@ zinit ice atinit"config_powerline_prompt"; zinit light romkatv/powerlevel10k
 alias ls="lsd"
 alias l="lsd -la"
 alias ll="lsd -l"
+alias ga="git add"
+alias gpush="git push"
+alias gpull="git pull"
+alias gmg="git merge"
+alias grebase="git rebase"
+alias gd="git diff"
+alias gc="git commit"
 
 # Override zsh option
 zstyle ':completion:*:default' menu select=1
