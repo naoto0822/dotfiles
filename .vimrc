@@ -34,7 +34,7 @@ set showcmd
 set backspace=2
 set wildmenu
 set ruler
-set clipboard=unnamed
+set clipboard+=unnamed
 set background=dark
 colorscheme solarized
 set virtualedit=onemore
