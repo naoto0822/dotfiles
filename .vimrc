@@ -62,6 +62,9 @@ noremap <C-w> <ESC>$
 noremap <C-b> <ESC>0
 noremap <C-n><C-h> :noh<CR>
 
+vnoremap < <gv
+vnoremap > >gv
+
 set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'solarized',
