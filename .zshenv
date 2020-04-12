@@ -1,5 +1,5 @@
 # dotfiles
-export DOTPATH=~/Documents/workspace/dotfiles
+export DOTPATH=~/Documents/workspace/src/github.com/naoto0822/dotfiles
 
 # base
 export PATH=$PATH:$HOME/bin:/sbin:/usr/sbin
@@ -18,8 +18,7 @@ export PATH="$GOENV_ROOT/bin:$PATH"
 export GOENV_DISABLE_GOPATH=1
 
 # go
-# NOTE: for local mac
-export GOPATH=$HOME/Documents/workspace/go
+export GOPATH=$HOME/Documents/workspace
 export PATH=$PATH:$GOPATH/bin
 
 # pyenv

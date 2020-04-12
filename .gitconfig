@@ -4,3 +4,6 @@
 
 [color]
   ui = auto
+
+[ghq]
+  root = ~/Documents/workspace/src
