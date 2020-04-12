@@ -33,6 +33,7 @@ set ruler
 set clipboard=unnamed
 set background=dark
 colorscheme solarized
+set virtualedit=onemore
 
 inoremap <silent> jj <ESC>
 
@@ -84,6 +85,9 @@ let g:asyncomplete_auto_completeopt = 1
 let g:asyncomplete_popup_delay = 200
 " https://github.com/prabirshrestha/vim-lsp/issues/431
 let g:lsp_text_edit_enabled = 0
+
+noremap <C-l><C-h> :LspHover<CR>
+noremap <C-l><C-r> :LspRename<CR>
 
 if expand("%:t") =~ ".*\.go"
   set noexpandtab
