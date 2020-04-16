@@ -71,7 +71,7 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
 
-noremap <C-n> :NERDTreeToggle<CR>
+noremap <C-b> :NERDTreeToggle<CR>
 
 function! s:check_back_space() abort
     let col = col('.') - 1
