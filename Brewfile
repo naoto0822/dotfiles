@@ -46,6 +46,8 @@ cask "mysqlworkbench"
 cask "visual-studio-code"
 cask "notion"
 cask "postman"
+cask "virtualbox"
+cask "vagrant"
 
 cask "docker"
 brew "docker-compose"
