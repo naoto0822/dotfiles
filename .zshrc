@@ -120,6 +120,9 @@ alias gd="git diff"
 alias gc="git commit"
 alias gout="git checkout"
 
+alias gop="/Users/s02437/Documents/workspace/bin/gp"
+#alias cat="bat"
+
 # Override zsh option
 zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -158,3 +161,13 @@ bindkey '^g' peco-src
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ### End of Powerlevel10k
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/s02437/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/s02437/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/s02437/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/s02437/google-cloud-sdk/completion.zsh.inc'; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/s02437/.sdkman"
+[[ -s "/Users/s02437/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/s02437/.sdkman/bin/sdkman-init.sh"

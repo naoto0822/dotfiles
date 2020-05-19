@@ -7,3 +7,9 @@
 
 [ghq]
   root = ~/Documents/workspace/src
+
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main

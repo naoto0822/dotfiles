@@ -53,6 +53,10 @@ iterm_shell_integration:
 	curl -L https://iterm2.com/shell_integration/zsh \
 		-o ~/.iterm2_shell_integration.zsh
 
+## install npm dep
+npmdep:
+	npm install -g typescript-language-server
+
 ## show help
 help:
 	@make2help $(MAKEFILE_LIST)

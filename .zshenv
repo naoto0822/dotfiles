@@ -27,6 +27,7 @@ export PATH="${PYENV_ROOT}/bin:$PATH"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 # ssh
 export PATH="/usr/local/opt/openssl/bin:$PATH"
@@ -36,3 +37,12 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Adding work
+# export GOPRIVATE=github.com/hoge
+
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+export PATH="/usr/local/opt/scala@2.12/bin:$PATH"
