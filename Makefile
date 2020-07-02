@@ -42,6 +42,12 @@ godep:
 	GO111MODULE=on go get golang.org/x/tools/gopls@latest
 	go get github.com/Songmu/make2help/cmd/make2help
 
+## rust dep
+rustdep:
+	rustup component add rls
+	rustup component add rust-analysis
+	rustup component add rust-src
+
 ## show help
 help:
 	@make2help $(MAKEFILE_LIST)
