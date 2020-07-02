@@ -33,3 +33,6 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"

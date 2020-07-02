@@ -5,3 +5,5 @@ fi
 eval "$(goenv init -)"
 
 eval "$(pyenv init -)"
+
+export PATH="$HOME/.cargo/bin:$PATH"
