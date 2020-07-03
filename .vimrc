@@ -166,15 +166,17 @@ endif
 
 if expand("%:t") =~ ".*\.rs"
   if executable('rls')
-    au User lsp_setup call lsp#register_server({
-          \ 'name': 'rls',
-          \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-          \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-          \ 'whitelist': ['rust'],
-          \ })
-    au FileType rs setlocal omnifunc=lsp#complete
-    au FileType rs nmap <buffer> <C-]> <plug>(lsp-definition)
-    au FileType rs nmap <buffer> gd <plug>(lsp-definition)
+    augroup LspRust
+      au!
+      au User lsp_setup call lsp#register_server({
+            \ 'name': 'rls',
+            \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+            \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
+            \ 'whitelist': ['rust'],
+            \ })
+      au FileType rs setlocal omnifunc=lsp#complete
+      au FileType rs nmap <buffer> <C-]> <plug>(lsp-definition)
+    augroup END
   endif
 endif
 
