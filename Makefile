@@ -48,6 +48,11 @@ rustdep:
 	rustup component add rust-analysis
 	rustup component add rust-src
 
+## iterm2
+iterm_shell_integration:
+	curl -L https://iterm2.com/shell_integration/zsh \
+		-o ~/.iterm2_shell_integration.zsh
+
 ## show help
 help:
 	@make2help $(MAKEFILE_LIST)
