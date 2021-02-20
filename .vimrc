@@ -199,3 +199,6 @@ if expand("%:t") =~ ".*\.sh"
   set shiftwidth=2
 endif
 
+if expand("%:t") =~ ".*\.nas"
+  set ft=nasm
+endif
