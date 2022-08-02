@@ -27,6 +27,7 @@ export PATH="${PYENV_ROOT}/bin:$PATH"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 # ssh
 export PATH="/usr/local/opt/openssl/bin:$PATH"
