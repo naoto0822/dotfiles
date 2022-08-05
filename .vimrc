@@ -21,6 +21,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'mattn/vim-goimports'
 call plug#end()
 
 set nocompatible
@@ -136,7 +137,7 @@ if expand("%:t") =~ ".*\.go"
   autocmd FileType go :highlight goErr ctermfg=214
   autocmd FileType go :match goErr /\<err\>/
 
-  let g:go_get_update = 0
+  " Syntax Highlight
   let g:go_highlight_types = 1
   let g:go_highlight_fields = 1
   let g:go_highlight_functions = 1
@@ -145,15 +146,22 @@ if expand("%:t") =~ ".*\.go"
   let g:go_highlight_extra_types = 1
   let g:go_auto_type_info = 0
   let g:go_auto_sameids = 0
+
   let g:go_def_mode = 'gopls'
   let g:go_info_mode = 'gopls'
   let g:go_code_completion_enabled = 0
+  let g:go_jump_to_error = 0
+  let g:go_fmt_autosave = 0
+  let g:go_imports_autosave = 0
+  let g:go_mod_fmt_autosave = 0
+  let g:go_doc_keywordprg_enabled = 0
   let g:go_def_mapping_enabled = 0
+  let g:go_get_update = 0
+  let g:go_gopls_enabled = 0
 
   au FileType go setlocal omnifunc=lsp#complete
   au FileType go nmap <buffer> <C-]> <plug>(lsp-definition)
   au FileType go nmap <buffer> gd <plug>(lsp-definition)
-
 endif
 
 if expand("%:t") =~ ".*\.ts"
