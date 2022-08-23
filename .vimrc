@@ -22,6 +22,7 @@ Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'mattn/vim-goimports'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set nocompatible
@@ -149,7 +150,7 @@ if expand("%:t") =~ ".*\.go"
 
   let g:go_def_mode = 'gopls'
   let g:go_info_mode = 'gopls'
-  let g:go_code_completion_enabled = 0
+  let g:go_code_completion_enabled = 1
   let g:go_jump_to_error = 0
   let g:go_fmt_autosave = 0
   let g:go_imports_autosave = 0
@@ -204,6 +205,7 @@ if expand("%:t") =~ ".*\.rs"
             \ })
       au FileType rs setlocal omnifunc=lsp#complete
       au FileType rs nmap <buffer> <C-]> <plug>(lsp-definition)
+      au FileType rs nmap <buffer> gd <plug>(lsp-definition)
     augroup END
   endif
 endif
