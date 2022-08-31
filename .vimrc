@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle'] }
 Plug 'altercation/vim-colors-solarized'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -9,7 +8,6 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'tpope/vim-endwise'
 Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
-Plug 'itchyny/lightline.vim'
 " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
@@ -23,6 +21,14 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'mattn/vim-goimports'
 Plug 'rust-lang/rust.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle'] }
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdcommenter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set nocompatible
@@ -46,9 +52,7 @@ set clipboard+=unnamed,unnamedplus
 set background=dark
 colorscheme solarized
 set virtualedit=onemore
-
 inoremap <silent> jj <ESC>
-
 inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
@@ -59,7 +63,6 @@ inoremap ' ''<ESC>i
 inoremap '<Enter> ''<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
 inoremap "<Enter> ""<Left><CR><ESC><S-o>
-
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -69,17 +72,47 @@ inoremap <C-b> <ESC>0i
 noremap <C-w> <ESC>$
 noremap <C-b> <ESC>0
 noremap <C-n><C-h> :noh<CR>
-
+noremap <C-l><C-h> :LspHover<CR>
+noremap <C-l><C-r> :LspRename<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
+""" Status Bar
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#default#layout = [
+  \ [ 'a', 'b', 'c' ],
+  \ ['z']
+  \ ]
+let g:airline_section_c = '%t %M'
+let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#tabline#show_close_button = 0
 
+""" itchyny/lightline.vim
+"let g:lightline = {
+"      \ 'colorscheme': 'solarized',
+"      \ }
+
+""" File Tree
 noremap <C-b> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
 
+""" preservim/nerdcommenter
+filetype plugin on
+let g:NERDDefaultAlign='left'
+vmap ++ <Plug>NERDCommenterToggle
+nmap ++ <Plug>NERDCommenterToggle
+
+""" junegunn/fzf
+" ref: https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
+
+""" If Backspace Action
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -90,16 +123,15 @@ inoremap <silent><expr> <TAB>
   \ <SID>check_back_space() ? "\<TAB>" :
   \ asyncomplete#force_refresh()
 
-noremap <C-l><C-h> :LspHover<CR>
-noremap <C-l><C-r> :LspRename<CR>
-
+""" ntpeters/vim-better-whitespace
 let g:strip_whitespace_on_save = 1
 
+""" nathanaelkane/vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 25
 
-" mattn/vim-lsp-settings
+""" mattn/vim-lsp-settings
 if empty(globpath(&rtp, 'autoload/lsp.vim'))
   finish
 endif
@@ -117,9 +149,8 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
-" /mattn/vim-lsp-settings
 
-" LSP Override
+""" LSP Override
 " let g:lsp_async_completion = 1
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand("~/vim-lsp.log")

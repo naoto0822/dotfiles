@@ -34,6 +34,8 @@ brew "lsd"
 brew "ghq"
 brew "nodebrew"
 brew "awscli"
+brew "bat"
+brew "ripgrep"
 
 cask "alfred"
 cask "iterm2"
