@@ -11,5 +11,5 @@ else
 fi
 
 # for compinit
-sudo chmod 755 /usr/local/share/zsh/site-functions
-sudo chmod 755 /usr/local/share/zsh
+sudo chmod 755 /opt/homebrew/bin/zsh/site-functions
+sudo chmod 755 /opt/homebrew/bin/zsh

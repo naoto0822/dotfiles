@@ -18,5 +18,5 @@ else
 fi
 
 info_log "---> install brew pkg"
-brew tap Homebrew/bundle
-brew bundle --verbose --file="$DOTPATH/Brewfile"
+#brew tap Homebrew/bundle
+#brew bundle --verbose --file="$DOTPATH/Brewfile"

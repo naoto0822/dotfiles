@@ -22,7 +22,7 @@ pull:
 
 ## bootstrap
 bootstrap:
-	@bash $(DOTPATH)/etc/util/osx_bootstrap.sh
+	DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/util/osx_bootstrap.sh
 
 ## exec provision
 pkg:
