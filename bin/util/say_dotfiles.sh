@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/bin/util/logger.sh
 
 dotfiles='
 
@@ -13,7 +13,7 @@ dotfiles='
   See the README for documentation.
   https://github.com/naoto0822/dotfiles
 
-  Copyright (c) 2019 naoto yamaguchi
+  Copyright (c) 2024 naoto yamaguchi
   Licensed under the MIT license.
 '
 

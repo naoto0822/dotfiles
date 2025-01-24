@@ -14,7 +14,6 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tpope/vim-abolish'
-Plug 'vim-scripts/YankRing.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
@@ -29,6 +28,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'github/copilot.vim'
 call plug#end()
 
 set nocompatible
@@ -163,9 +163,10 @@ let g:lsp_diagnostics_echo_cursor = 1
 " let g:lsp_text_edit_enabled = 0
 
 if expand("%:t") =~ ".*\.go"
-  set noexpandtab
-  set tabstop=4
-  set shiftwidth=4
+  "set noexpandtab
+  "set tabstop=4
+  "set shiftwidth=4
+  au FileType go setlocal sw=4 ts=4 sts=4 noet
   autocmd FileType go :highlight goErr ctermfg=214
   autocmd FileType go :match goErr /\<err\>/
 
@@ -179,21 +180,36 @@ if expand("%:t") =~ ".*\.go"
   let g:go_auto_type_info = 0
   let g:go_auto_sameids = 0
 
-  let g:go_def_mode = 'gopls'
-  let g:go_info_mode = 'gopls'
-  let g:go_code_completion_enabled = 1
-  let g:go_jump_to_error = 0
-  let g:go_fmt_autosave = 0
-  let g:go_imports_autosave = 0
-  let g:go_mod_fmt_autosave = 0
-  let g:go_doc_keywordprg_enabled = 0
+  "let g:go_def_mode = 'gopls'
+  "let g:go_info_mode = 'gopls'
+  "let g:go_code_completion_enabled = 1
+  "let g:go_jump_to_error = 0
+  "let g:go_fmt_autosave = 0
+  "let g:go_imports_autosave = 0
+  "let g:go_mod_fmt_autosave = 0
+  "let g:go_doc_keywordprg_enabled = 0
+  "let g:go_def_mapping_enabled = 0
+  "let g:go_get_update = 0
+  "let g:go_gopls_enabled = 0
+  let g:go_textobj_enabled = 0
   let g:go_def_mapping_enabled = 0
-  let g:go_get_update = 0
   let g:go_gopls_enabled = 0
+  let g:go_code_completion_enabled = 0
+
+  let g:goimports = 1
 
   au FileType go setlocal omnifunc=lsp#complete
   au FileType go nmap <buffer> <C-]> <plug>(lsp-definition)
   au FileType go nmap <buffer> gd <plug>(lsp-definition)
+
+  let g:lsp_settings = {
+      \  'gopls': {
+      \    'initialization_options': {
+      \      'gofumpt': v:true,
+      \      'staticcheck': v:true,
+      \    },
+      \  }
+      \}
 endif
 
 if expand("%:t") =~ ".*\.ts"

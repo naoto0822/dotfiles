@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/bin/util/logger.sh
 
 # vim-plug
 info_log "---> install vim-plug"

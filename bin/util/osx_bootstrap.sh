@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/bin/util/logger.sh
 
 # command line tools
 if [ ! `which xcode-select` ]; then

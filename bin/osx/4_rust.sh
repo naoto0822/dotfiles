@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/bin/util/logger.sh
 
 if [ ! `which rustc` ]; then
   curl https://sh.rustup.rs -sSf | sh

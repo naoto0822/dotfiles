@@ -6,3 +6,4 @@
 bin/tig/
 vendor/tig/
 .vagrant/
+tmp/

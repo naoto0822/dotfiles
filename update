@@ -1,14 +1,14 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
-source "$DOTPATH"/etc/util/echo_task.sh
+source "$DOTPATH"/bin/util/logger.sh
+source "$DOTPATH"/bin/util/echo_task.sh
 
 echo_start () {
-  bash "$DOTPATH"/etc/util/say_dotfiles.sh
+  bash "$DOTPATH"/bin/util/say_dotfiles.sh
 }
 
 echo_end () {
-  bash "$DOTPATH"/etc/util/say_yeah.sh
+  bash "$DOTPATH"/bin/util/say_yeah.sh
 }
 
 pull () {

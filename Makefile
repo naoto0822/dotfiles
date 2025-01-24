@@ -3,8 +3,6 @@ CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .DS_Store .git .gitmodules .travis.yml .ssh_config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
-export GO111MODULE:=on
-
 ## install dotfiles
 install:
 	DOTPATH=$(DOTPATH) bash $(DOTPATH)/install
@@ -13,20 +11,17 @@ install:
 update:
 	DOTPATH=$(DOTPATH) bash $(DOTPATH)/update
 
-## pull repo and submodule
+## pull repo
 pull:
 	git pull origin master
-	# git submodule init
-	# git submodule update
-	# git submodule foreach git pull origin master
 
 ## bootstrap
 bootstrap:
-	DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/util/osx_bootstrap.sh
+	DOTPATH=$(DOTPATH) bash $(DOTPATH)/bin/util/osx_bootstrap.sh
 
 ## exec provision
 pkg:
-	$(foreach val, $(wildcard ./etc/*.sh), DOTPATH=$(DOTPATH) bash $(DOTPATH)/$(val);)
+	$(foreach val, $(wildcard ./bin/*.sh), DOTPATH=$(DOTPATH) bash $(DOTPATH)/$(val);)
 
 ## deploy dotfiles
 deploy:
@@ -39,8 +34,7 @@ dep:
 
 ## install go dependencies
 godep:
-	GO111MODULE=on go get golang.org/x/tools/gopls@latest
-	go get github.com/Songmu/make2help/cmd/make2help
+	# NOP
 
 ## rust dep
 rustdep:

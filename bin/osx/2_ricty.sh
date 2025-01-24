@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/bin/util/logger.sh
 
 info_log "---> install Ricty font"
 brew tap sanemat/font

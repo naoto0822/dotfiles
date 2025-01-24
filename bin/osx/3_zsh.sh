@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$DOTPATH"/etc/util/logger.sh
+source "$DOTPATH"/bin/util/logger.sh
 
 ZSHPATH="/opt/homebrew/bin/zsh"
 if ! grep $ZSHPATH /etc/shells; then
@@ -12,6 +12,5 @@ else
 fi
 
 if [ ! -e $HOME/.zinit ]; then
-  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
   bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 fi

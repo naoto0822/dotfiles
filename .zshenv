@@ -14,18 +14,15 @@ export PATH=$PATH:$HOME/bin:/sbin:/usr/sbin
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# goenv
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-export GOENV_DISABLE_GOPATH=1
-
 # go
 export GOPATH=$HOME/Documents/workspace
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
-# pyenv
+# python
 export PYENV_ROOT="${HOME}/.pyenv"
 export PATH="${PYENV_ROOT}/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -42,3 +39,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # HomeBrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export GOPROXY="https://proxy.golang.org,direct"
+
+eval "$(direnv hook zsh)"
