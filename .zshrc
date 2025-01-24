@@ -40,7 +40,6 @@ config_powerline_prompt() {
   # theme_default
 }
 
-
 ttn() {
   tt new -s $1
 }
