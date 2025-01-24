@@ -2,6 +2,9 @@
   name = naoto0822
   email = n.h.in.m.h@gmail.com
 
+[core]
+  sshCommand = "ssh -i ~/.ssh/id_rsa"
+
 [color]
   ui = auto
 
@@ -11,8 +14,8 @@
 [init]
   defaultBranch = main
 
-[url "git@github.com:"]
-  insteadOf = https://github.com/
+;[url "git@github.com:"]
+;  insteadOf = https://github.com/
 
 [url "https://github.com/rust-lang/crates.io-index"]
   insteadOf = https://github.com/rust-lang/crates.io-index

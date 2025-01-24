@@ -27,6 +27,7 @@ pkg:
 deploy:
 	$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	cp -f .ssh_config $(HOME)/.ssh/config;
+	cp -f .sheldon_plugins.toml $(HOME)/.config/sheldon/plugins.toml;
 
 ## dep resolved dependencies after install
 dep:

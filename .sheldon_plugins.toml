@@ -1,0 +1,88 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+# ~/.config/sheldon/plugins.toml
+
+[plugins.zsh_interactive_cd]
+# remote = "https://github.com/mrjohannchang/zsh-interactive-cd/raw/master/zsh-interactive-cd.plugin.zsh"
+github = "mrjohannchang/zsh-interactive-cd"
+
+[plugins.zsh_autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.omz_lib_bzr]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/bzr.zsh"
+
+[plugins.omz_lib_clipboard]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/clipboard.zsh"
+
+[plugins.omz_lib_compfix]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/compfix.zsh"
+
+[plugins.omz_lib_completion]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/completion.zsh"
+
+[plugins.omz_lib_correction]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/correction.zsh"
+
+[plugins.omz_lib_diagnostics]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/diagnostics.zsh"
+
+[plugins.omz_lib_functions]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/functions.zsh"
+
+[plugins.omz_lib_git]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/git.zsh"
+
+[plugins.omz_lib_history]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/history.zsh"
+
+[plugins.omz_lib_key_bindings]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/key-bindings.zsh"
+
+[plugins.omz_lib_misc]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/misc.zsh"
+
+[plugins.omz_lib_prompt_info_functions]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/prompt_info_functions.zsh"
+
+[plugins.omz_lib_spectrum]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/spectrum.zsh"
+
+[plugins.omz_lib_termsupport]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/termsupport.zsh"
+
+[plugins.omz_lib_theme_appearance]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/theme-and-appearance.zsh"
+
+[plugins.omz_lib_directories]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/lib/directories.zsh"
+
+[plugins.omz_plugin_git]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/plugins/git/git.plugin.zsh"
+
+[plugins.omz_plugin_github]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/plugins/github/github.plugin.zsh"
+
+[plugins.omz_plugin_colored_man_pages]
+remote  = "https://github.com/ohmyzsh/ohmyzsh/raw/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh"
+
+[plugins.fast_syntax_highlighting]
+github = "zdharma/fast-syntax-highlighting"
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
+

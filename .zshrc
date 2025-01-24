@@ -1,27 +1,4 @@
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-     zdharma-continuum/z-a-patch-dl \
-     zdharma-continuum/z-a-as-monitor \
-     zdharma-continuum/z-a-bin-gem-node
-
-
-### End of Zinit's installer chunk
-
 ### Added by Powerlevel10k
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -76,39 +53,6 @@ ttd() {
   tt kill-session -t $1
 }
 
-# Plugins
-zinit light changyuheng/zsh-interactive-cd
-
-zinit ice wait'0' atload'_zsh_autosuggest_start' lucid
-zinit light zsh-users/zsh-autosuggestions
-
-zinit snippet OMZ::lib/bzr.zsh
-zinit snippet OMZ::lib/clipboard.zsh
-zinit snippet OMZ::lib/compfix.zsh
-zinit snippet OMZ::lib/completion.zsh
-zinit snippet OMZ::lib/correction.zsh
-zinit snippet OMZ::lib/diagnostics.zsh
-zinit snippet OMZ::lib/directories.zsh
-zinit snippet OMZ::lib/functions.zsh
-zinit snippet OMZ::lib/git.zsh
-zinit snippet OMZ::lib/grep.zsh
-zinit snippet OMZ::lib/history.zsh
-zinit snippet OMZ::lib/key-bindings.zsh
-zinit snippet OMZ::lib/misc.zsh
-zinit snippet OMZ::lib/prompt_info_functions.zsh
-zinit snippet OMZ::lib/spectrum.zsh
-zinit snippet OMZ::lib/termsupport.zsh
-zinit snippet OMZ::lib/theme-and-appearance.zsh
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit cdclear -q
-zinit snippet OMZ::plugins/github/github.plugin.zsh
-zinit snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
-
-zinit light zdharma/fast-syntax-highlighting
-
-zinit env-whitelist 'POWERLEVEL9K_*'
-zinit ice atinit"config_powerline_prompt"; zinit light romkatv/powerlevel10k
-
 # Override Alias
 alias ls="lsd"
 alias l="lsd -la"
@@ -156,11 +100,13 @@ function peco-src () {
 zle -N peco-src
 bindkey '^g' peco-src
 
+### sheldon
+eval "$(sheldon source)"
+
 ### Added by Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ### End of Powerlevel10k
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
