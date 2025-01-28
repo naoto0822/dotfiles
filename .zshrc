@@ -8,7 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 ### End of Powerlevel10k
 
-# Zsh options
+### Zsh options
 export ZSH_DISABLE_COMPFIX=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
 export CLICOLOR=1
@@ -27,30 +27,17 @@ setopt list_packed
 setopt list_types
 setopt auto_cd
 
-# Alias
+### Override zsh option
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+### Start of Sheldon
+eval "$(sheldon source)"
+### End of Sheldon
+
+### Alias
 alias tt="tmux"
-
-# Function
-
-# theme_default() {
-# }
-#
-
-config_powerline_prompt() {
-  # theme_default
-}
-
-ttn() {
-  tt new -s $1
-}
-
-tta() {
-  tt a -t $1
-}
-
-ttd() {
-  tt kill-session -t $1
-}
 
 # Override Alias
 alias ls="lsd"
@@ -64,11 +51,6 @@ alias grebase="git rebase"
 alias gd="git diff"
 alias gc="git commit"
 alias gout="git checkout"
-
-# Override zsh option
-zstyle ':completion:*:default' menu select=1
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # peco command search
 setopt hist_ignore_all_dups
@@ -99,8 +81,21 @@ function peco-src () {
 zle -N peco-src
 bindkey '^g' peco-src
 
-### sheldon
-eval "$(sheldon source)"
+config_powerline_prompt() {
+  # theme_default
+}
+
+ttn() {
+  tt new -s $1
+}
+
+tta() {
+  tt a -t $1
+}
+
+ttd() {
+  tt kill-session -t $1
+}
 
 ### Added by Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
