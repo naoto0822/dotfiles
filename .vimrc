@@ -1,19 +1,16 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'altercation/vim-colors-solarized'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'tpope/vim-endwise'
-Plug 'marcus/rsense'
 Plug 'chase/vim-ansible-yaml'
 " Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'tpope/vim-abolish'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mattn/vim-lsp-icons'
 Plug 'hrsh7th/vim-vsnip'
@@ -23,14 +20,18 @@ Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle'] }
-Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
+Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'github/copilot.vim'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
+"---------------------------------------------------------------------------
+" Key Map:"{{{
+"
 set nocompatible
 syntax on
 syntax enable
@@ -50,7 +51,7 @@ set wildmenu
 set ruler
 set clipboard+=unnamed,unnamedplus
 set background=dark
-colorscheme solarized
+colorscheme codedark
 set virtualedit=onemore
 inoremap <silent> jj <ESC>
 inoremap { {}<Left>
@@ -76,43 +77,53 @@ noremap <C-l><C-h> :LspHover<CR>
 noremap <C-l><C-r> :LspRename<CR>
 vnoremap < <gv
 vnoremap > >gv
-
-""" Status Bar
+"}}}
+"---------------------------------------------------------------------------
+" Status Bar:"{{{
+"
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#default#layout = [
-  \ [ 'a', 'b', 'c' ],
-  \ ['z']
-  \ ]
-let g:airline_section_c = '%t %M'
-let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
-let g:airline#extensions#hunks#non_zero_only = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#tabline#show_close_button = 0
-
-""" itchyny/lightline.vim
-"let g:lightline = {
-"      \ 'colorscheme': 'solarized',
-"      \ }
-
-""" File Tree
+"}}}
+"---------------------------------------------------------------------------
+" File Tree:"{{{
+"
 noremap <C-b> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
-
-""" preservim/nerdcommenter
+"}}}
+"---------------------------------------------------------------------------
+" Code Commenter:"{{{
+"
 filetype plugin on
 let g:NERDDefaultAlign='left'
 vmap ++ <Plug>NERDCommenterToggle
 nmap ++ <Plug>NERDCommenterToggle
+"}}}
+"---------------------------------------------------------------------------
+" Search:"{{{
+"
+fun! FzfOmniFiles()
+  let is_git = system('git status')
+  if v:shell_error
+    :Files
+  else
+    :GFiles
+  endif
+endfun
+nnoremap <C-p> :call FzfOmniFiles()<CR>
 
-""" junegunn/fzf
-" ref: https://qiita.com/youichiro/items/b4748b3e96106d25c5bc
+command! -bang -nargs=* Rg
+\ call fzf#vim#grep(
+\ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
+\ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 3..'}, 'up:60%')
+\ : fzf#vim#with_preview({'options': '--exact --delimiter : --nth 3..'}, 'right:50%:hidden', '?'),
+\ <bang>0)
+nnoremap <C-g> :Rg<CR>
 
-""" If Backspace Action
+nnoremap fr vawy:Rg <C-R>"<CR>
+xnoremap fr y:Rg <C-R>"<CR>
+"}}}
+"---------------------------------------------------------------------------
+" If Backspace Action:"{{{
+"
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -122,16 +133,22 @@ inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
   \ asyncomplete#force_refresh()
-
-""" ntpeters/vim-better-whitespace
+"}}}
+"---------------------------------------------------------------------------
+" ntpeters/vim-better-whitespace:"{{{
+"
 let g:strip_whitespace_on_save = 1
-
-""" nathanaelkane/vim-indent-guides
+"}}}
+"---------------------------------------------------------------------------
+" nathanaelkane/vim-indent-guides:"{{{
+"
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 25
-
-""" mattn/vim-lsp-settings
+"}}}
+"---------------------------------------------------------------------------
+" LSP:"{{{
+"
 if empty(globpath(&rtp, 'autoload/lsp.vim'))
   finish
 endif
@@ -140,6 +157,7 @@ function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   setlocal signcolumn=yes
   nmap <buffer> gd <plug>(lsp-definition)
+  nmap <buffer> <C-]> <plug>(lsp-definition)
   nmap <buffer> <f2> <plug>(lsp-rename)
   inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
 endfunction
@@ -150,7 +168,6 @@ augroup lsp_install
 augroup END
 command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
 
-""" LSP Override
 " let g:lsp_async_completion = 1
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand("~/vim-lsp.log")
@@ -212,34 +229,6 @@ if expand("%:t") =~ ".*\.go"
       \}
 endif
 
-if expand("%:t") =~ ".*\.ts"
-  if executable('typescript-language-server')
-    augroup LspTypeScript
-      au!
-      autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'typescript-language-server',
-            \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-            \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-            \ 'whitelist': ['typescript'],
-            \ })
-      autocmd FileType typescript setlocal omnifunc=lsp#complete
-    augroup END :echomsg "vim-lsp with `typescript-language-server` enabled"
-  endif
-endif
-
-if expand("%:t") =~ ".*\.cpp"
-  if executable('clangd')
-    au User lsp_setup call lsp#register_server({
-          \ 'name': 'clangd',
-          \ 'cmd': {server_info->['clangd', '-background-index']},
-          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-          \ })
-    let g:lsp_signs_enabled = 1
-    let g:lsp_diagnostics_echo_cursor = 1
-    au FileType c,cc,cpp,cxx,h,hpp setlocal omnifunc=lsp#complete
-  endif
-endif
-
 if expand("%:t") =~ ".*\.rs"
   if executable('rls')
     augroup LspRust
@@ -279,3 +268,4 @@ endif
 if expand("%:t") =~ ".*\.nas"
   set ft=nasm
 endif
+"}}}
