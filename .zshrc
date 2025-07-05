@@ -1,4 +1,3 @@
-
 ### Added by Powerlevel10k
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -11,9 +10,9 @@ fi
 ### Zsh options
 export ZSH_DISABLE_COMPFIX=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=23'
-export CLICOLOR=1
-export LSCOLORS=gxfxcxdxbxegedabagacad
-export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:"
+#export CLICOLOR=1
+#export LSCOLORS=gxfxcxdxbxegedabagacad
+#export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43:"
 
 autoload -U compaudi
 autoload -U compinit
@@ -108,6 +107,9 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
+# MySQL
+export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="$HOME/.rd/bin:$PATH"
+export PATH="/Users/naoto/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
